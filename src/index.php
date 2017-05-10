@@ -1,25 +1,38 @@
-<!-- include the header. -->
-<?php require 'view/header.html'; ?>
-    <!--
-    <p>Here's a simple form to show PHP in action:</p>
-        <!-- divide this column into 3/4 again to decrease size of form fields (just on large or medium size viewports) -->
-        <div class="col-md-9 col-lg-9" >
-            <form action="display_names.php" method="post">
-                <fieldset class="nameFields">
-                    <legend class="formLegend">Name Form</legend>
-                    <div class="form-group">
-                        <label for "firstName">First Name:</label>
-                        <!-- do some client-side validation of form data -->
-                        <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" required class="form-control" name="first_name" placeholder="Enter in your first name">
-                    </div>
-                    <div class="form-group">
-                        <label for "lastName">Last Name:</label>
-                        <!-- do some client-side validation of form data -->
-                        <input pattern="^[A-Z]'?[- a-zA-Z]+$" title="Must start with a capital letter, with an optional ',  followed by one or more dashes, small letters, or spaces" type="text" required class="form-control" name="last_name" placeholder="Enter in your last name">
-                    </div>
-                    <p><button type="submit" class="btn btn-primary" id="submitButton">Submit</button></p>
-                </fieldset>
-             </form>
+<?php
+	require_once 'view/allproducts_header.html';
+	require_once 'model/db_connect.php';
+	require_once 'model/db_functions.php';
+	
+	$products = getAllProducts();
+
+	$end = 2;
+	for($i = 0; $i < count($products); $i++) {
+		$prod = $products[$i];
+	
+		if($i % 3 == 0) {
+?>	
+<div class="container">
+    <div class="row">
+<?php
+		}
+	    	
+    echo "<div class='col-sm-4'>
+        <div class='panel panel-primary'>
+            <div class='panel-heading'>" . $prod['prod_name'] . "</div>
+            <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:100%' alt='Image'></div>
+            <div class='panel-footer'>" . $prod['unit_price'] . "</div>
         </div>
-    <!-- include the footer. -->
-<?php require 'view/footer.php'; ?>
+    </div>";
+        
+		if($end == $i) {
+?>	        
+    </div>
+</div><br>    
+<?php
+			$end = $end + 3;
+		} 
+	} 
+?>
+<br>
+</body>
+</html>
