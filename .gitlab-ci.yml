@@ -97,9 +97,9 @@ deploy_db_to_dokku:
     # Create the mysql dump
     - cat db/a-schema.sql db/b-populate.sql > dump.sql
     # Unlink Service
-    - ssh dokku@$DEPLOY_SRV mysql:unlink $DBNAME $CI_PROJECT_NAME
+    - 'ssh dokku@$DEPLOY_SRV mysql:unlink $DBNAME $CI_PROJECT_NAME || true'
     # Destroy DB first otherwise next command will fail the build if alrady created
-    - ssh dokku@$DEPLOY_SRV -- --force mysql:destroy $DBNAME
+    - 'ssh dokku@$DEPLOY_SRV -- --force mysql:destroy $DBNAME || true'
     # Ensure DB is created
     - ssh dokku@$DEPLOY_SRV mysql:create $DBNAME
     # Import dump

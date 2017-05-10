@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exotic Fruits - StarFruit</title>
+    <title>Exotic Fruits - Shopping Cart</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -62,40 +62,74 @@
 
     <div class="container">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4">STARFRUIT</div>
-                <div class="col-sm-8">PRICE $3.99 CAD</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4"><img src="http://deepblue.cs.camosun.bc.ca/~cst611/ics199images/StarFruit.jpg" width="100px" height="100px">
-                </div>
-                <div class="col-sm-8">Some text here. Describing the fruit. It's shaped like a star. Yay! Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
-            </div>
-
 
             <div class="row">
+                <div class="col-sm-4"><h4>SHOPPING CART</h4></div>
+                <div class="col-sm-3"><h4>Price/Unit</h4></div>
+                <div class="col-sm-3"><h4>Total</h4></div>
+				<div class="col-sm-2"></div>
+
+            </div>
+						<br>	
+			<div class="row">
+				<div class="col-sm-2">
+
+				
+				
+				  <form>
+    <div class="form-group">
+      <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+  </form>						
+				
+				</div>
+                <div class="col-sm-2"><h4>Starfruit</h4></div>
+                <div class="col-sm-3"><h4>$3.99</h4></div>
+                <div class="col-sm-3"><h4>$3.99</h4></div>
+				<div class="col-sm-2">
+				    <div>
+                        <button type="button" class="btn btn-primary btn-md">Remove Item</button>
+                    </div>
+				</div>
+            </div>
+			<br><br>
+		<div class="row">
+		        <div class="col-sm-4"></div>
                 <div class="col-sm-4"></div>
-                <div class="col-sm-5">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Quantity
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">1</a>
-                            </li>
-                            <li><a href="#">2</a>
-                            </li>
-                            <li><a href="#">3</a>
-                            </li>
-                        </ul>
+                <div class="col-sm-2"><h4>Subtotal</h4></div>
+				<div class="col-sm-2"><h4>$3.99</h4></div>
+		</div>
+		
+		<div class="row">
+		        <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2"><h4>Tax</h4></div>
+				<div class="col-sm-2"><h4>$0.21</h4></div>
+		</div>	
+
+		<div class="row">
+		        <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2"><h4>Total</h4></div>
+				<div class="col-sm-2"><h4>$4.10</h4></div>
+		</div>
+
+		<div class="row">
+		        <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2"></div>
+				<div class="col-sm-2">
+					<div>
+                        <button type="button" class="btn btn-primary btn-md">Purchase</button>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div>
-                        <button type="button" class="btn btn-primary btn-md">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+				</div>
+		</div>
+		
 
 
         </div>
