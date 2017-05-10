@@ -1,5 +1,23 @@
 <?php
 
+/**
+ * This function generates the result set of
+ * the products table.
+ *
+ * @return array $products - an assoc. array which contains all the products stored in the DB.
+ */
+function getAllProducts()
+{
+    global $dbc;
+
+		$query = 'SELECT prod_id, prod_name, prod_desc, stock_amount, unit_price, photo FROM product';
+		$statement = $dbc->prepare($query);
+		$statement->execute();
+		$products = $statement->fetchAll();
+		$statement->closeCursor();
+		return $products;
+}
+
 /** 
  * This function takes in a first and last name
  * and stores it in the database
@@ -22,7 +40,6 @@ function storeName($firstName, $lastName)
     $statement->closeCursor();
 
 }
-
 
 /**
  * This function generates the result set of
