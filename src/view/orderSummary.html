@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exotic Fruits - Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+            background-color: #ffffff;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1><img src = "http://deepblue.cs.camosun.bc.ca/~cst615/ICS199/images/1.png" width="350" height="193"></h1>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Login/Register</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <h2>Order Review</h2><br>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">Shipping Details</div>
+                <div class="panel-body">
+                    Fiona Siu<br>
+                    123 Ave<br>
+                    Victoria, BC Canada<br>
+                    V8Y 2K1<br></div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">Billing Details</div>
+                <div class="panel-body">
+                    Fiona Siu<br>
+                    123 Ave<br>
+                    Victoria, BC Canada<br>
+                    V8Y 2K1<br></div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">Payment Information</div>
+                <div class="panel-body">Stripe Payment Successful</div>
+            </div>
+            <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="text-center"><strong>Order summary</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <td><strong>Item Name</strong></td>
+                                        <td class="text-center"><strong>Item Price</strong></td>
+                                        <td class="text-center"><strong>Item Quantity</strong></td>
+                                        <td class="text-right"><strong>Total</strong></td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Starfruit</td>
+                                        <td class="text-center">$2.00</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-right">$2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Longan</td>
+                                        <td class="text-center">$3.00</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-right">$3.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highrow"></td>
+                                        <td class="highrow"></td>
+                                        <td class="highrow text-center"><strong>Subtotal</strong></td>
+                                        <td class="highrow text-right">$5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="emptyrow"></td>
+                                        <td class="emptyrow"></td>
+                                        <td class="emptyrow text-center"><strong>Shipping</strong></td>
+                                        <td class="emptyrow text-right">$10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                        <td class="emptyrow"></td>
+                                        <td class="emptyrow text-center"><strong>Total</strong></td>
+                                        <td class="emptyrow text-right">$15.00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-default">Make Purchase</button>
+        </div>
+
+    </div><br>
+    <div class="row">
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" area-valuemax="100" style="width:80%">
+                Order Summary
+            </div>
+        </div>
+    </div>
+
+</div><br><br>
+
+</body>
+</html>
