@@ -1,5 +1,5 @@
-<?php
-	require 'allproducts_header.html';
+<?php 
+	require_once 'header.html'; 
 ?>	
 <div class="container">
     <div class="row">
