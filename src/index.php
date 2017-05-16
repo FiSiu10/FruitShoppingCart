@@ -17,7 +17,7 @@
 		}
 	    	
     echo "<div class='col-sm-4'>
-        <div class='panel panel-primary'>
+        <div class='panel panel-success'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
             <div class='panel-body'><a href='/view/fruitpage.php?prod_id=" . $prod['prod_id'] . "'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:300px;height:200px' alt='Image'></a></div>
             <div class='panel-footer'>" . $prod['unit_price'] . "</div>
