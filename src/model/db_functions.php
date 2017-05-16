@@ -119,4 +119,32 @@ function getAllNames()
 
 }
 */
+
+/** 
+ * This function takes in a address, city, province, and country
+ * and stores it in the database
+ *
+ * @param string $address - the streetAddress the user entered in the form.
+ * @param string $city - the city the user entered in the form.
+ * @param string $province - the province the user entered in the form.
+ * @param string $postalcode - the postal code the user entered in the form.
+ * @param string $country - the country the user entered in the form.  
+ *
+ * @return void 
+ */
+function storeBillingAddress($address, $city, $province, $postalcode, $country)
+{
+    global $dbc;
+    
+    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_prov, bill_pc, bill_country) 
+        		VALUES (:address, :city, :province, :postalcode, :country)';
+    $statement = $dbc->prepare($query);
+    $statement->bindValue(':address', $address);
+    $statement->bindValue(':city', $city);
+    $statement->bindValue(':province', $province);
+    $statement->bindValue(':postalcode', $postalcode);	
+    $statement->bindValue(':country', $country);        
+    $statement->execute();
+    $statement->closeCursor();
+}
 ?>
