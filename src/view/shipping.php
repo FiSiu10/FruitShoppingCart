@@ -1,69 +1,15 @@
+<?php
+    require_once 'header.html';
+    require_once '../model/db_connect.php';
+    require_once '../model/db_functions.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Exotic Fruits - Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .navbar {
-            margin-bottom: 50px;
-            border-radius: 0;
-        }
-
-        /* Remove the jumbotron's default bottom margin */
-        .jumbotron {
-            margin-bottom: 0;
-            background-color: #ffffff;
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            background-color: #f2f2f2;
-            padding: 25px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1><img src = "http://deepblue.cs.camosun.bc.ca/~cst615/ICS199/images/1.png" width="350" height="193"></h1>
-    </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Login/Register</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+?>
 
 <div class="container">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form action="add_shipping.php" method="post">
+            <form action="billing.php" method="post">
                 <h2>Shipping Address</h2><br>
                 <div class="form-group">
                     <label for="firstname">First Name</label>
@@ -78,7 +24,7 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="/\d+ [0-9a-zA-Z ]+/" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="shipAddress" placeholder="Address">
+                    <input pattern="\d+ [0-9a-zA-Z ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="shipAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>

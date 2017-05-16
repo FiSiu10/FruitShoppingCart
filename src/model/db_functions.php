@@ -132,12 +132,12 @@ function getAllNames()
  *
  * @return void 
  */
-function storeBillingAddress($address, $city, $province, $postalcode, $country)
+function storeAddress($billAddress, $billCity, $billProvince, $billPostal, $billCountry)
 {
     global $dbc;
     
-    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_prov, bill_pc, bill_country) 
-        		VALUES (:address, :city, :province, :postalcode, :country)';
+    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_pc, bill_prov_id, bill_pc, bill_country_id, ship_addr, ship_ciy, ship_pc, ship_prov_id, ship_country_id) 
+        		VALUES (:billAddress, :billCity, :billPostal, :billProvince, :billCountry, :shipAddress, :shipCity, :shipPostal, :shipProvince, :shipCountry)';
     $statement = $dbc->prepare($query);
     $statement->bindValue(':address', $address);
     $statement->bindValue(':city', $city);
