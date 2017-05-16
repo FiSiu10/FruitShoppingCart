@@ -14,17 +14,17 @@
                 <div class="form-group">
                     <label for="firstname">First Name</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" name="firstname" class="form-control" id="firstname" name="shipFirstName" placeholder="First Name">
+                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="firstname" name="shipFirstName" placeholder="First Name">
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" name="lastname" class="form-control" id="lastname" name="shipLastName" placeholder="Last Name">
+                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="lastname" name="shipLastName" placeholder="Last Name">
                 </div>
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="\d+ [0-9a-zA-Z ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="shipAddress" placeholder="Address">
+                    <input pattern="\d+ [0-9a-zA-Z. ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="shipAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label>Province</label><br>
-                    <select>
+                    <select name="shipProvince">
                         <option value="AB">Alberta</option>
                         <option value="BC">British Columbia</option>
                         <option value="MB">Manitoba</option>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     <label>Country:</label><br>
-                    <select name="billCountry">
+                    <select name="shipCountry">
                         <option value="CA">Canada</option>
                     </select>
                 </div>

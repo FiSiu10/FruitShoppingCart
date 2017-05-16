@@ -70,14 +70,14 @@
     } else {
         $error_message = '';
     }
-/*
+
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
         echo $error_message . '<p>Go <a href="billing.html">back to the form</a></p>';
         exit();
     }
-*/
+
    
  ?>
    <div class="container">

@@ -44,14 +44,14 @@
     } else {
         $error_message = '';
     }
-/*
+
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
         echo $error_message . '<p>Go <a href="shipping.php">back to the form</a></p>';
         exit();
     }
-	*/
+	
 ?>
 
 <div class="container">
@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="\d+ [0-9a-zA-Z ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
+                    <input pattern="\d+ [0-9a-zA-Z. ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
@@ -107,7 +107,7 @@
 				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
 				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
 				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-                <button type="submit" class="btn btn-default">Continue to Stripe</button>
+                <button type="submit" class="btn btn-default">Continue to Address Info Review</button>
             </form>
         </div>
         <div class="col-md-4"></div>
