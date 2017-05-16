@@ -27,7 +27,7 @@
   </tr>
   <tr>
   <td>
-  <a href='http://deepblue.cs.camosun.bc.ca/~comp19900/php/SignUpVeri.php?b=$new_id' style='text-decoration:none' target='_blank'><font face='verdana' color='#04188f' size='4' style='text-decoration:underline'>AWESOME COMPUTERS</font></a>
+  <a href='http://deepblue.cs.camosun.bc.ca/~comp19900/php/SignUpVeri.php?b=$new_id' style='text-decoration:none' target='_blank'><font face='verdana' color='#04188f' size='4' style='text-decoration:underline'>Exotic Fruit</font></a>
   </td>
   </tr>
   </tbody>

@@ -17,11 +17,11 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address:</label>
-										<input type="email" name="email" required id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address">	                    
+					<input type="email" name="email" required id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address">	                    
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Password">
+                    <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
                 </div><br>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

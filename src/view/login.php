@@ -9,7 +9,7 @@
                 <h2>Login</h2><br>
                 <div class="form-group">
                     <label for="email">Email address:</label>
-										<input type="email" name="email" required id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address">	                                        
+					<input type="email" name="email" required id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address">	                                        
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
