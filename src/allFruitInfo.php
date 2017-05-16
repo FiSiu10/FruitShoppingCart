@@ -1,7 +1,7 @@
 <?php
 require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
-require_once 'view/allproducts_header.html';
+require_once 'view/header.html';
 
 $prod_id = filter_input(INPUT_GET,  'prod_id', FILTER_VALIDATE_INT);
 
