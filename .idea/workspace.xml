@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f8480a-3859-4f70-95f3-48f9fa9f060c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/aboutus.html" afterPath="$PROJECT_DIR$/src/view/aboutus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/faq.html" afterPath="$PROJECT_DIR$/src/view/faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/header.html" afterPath="$PROJECT_DIR$/src/view/header.html" />
-    </list>
+    <list default="true" id="93f8480a-3859-4f70-95f3-48f9fa9f060c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +12,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/header.html">
+      <file leaf-file-name="shoppingcart.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+              <folding>
+                <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,7 +225,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11202000" />
+    <option name="totallyTimeSpent" value="11292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -279,7 +277,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -311,7 +311,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,7 +330,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -415,7 +419,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -471,7 +477,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -488,7 +496,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,14 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -594,9 +596,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
