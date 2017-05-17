@@ -1,12 +1,11 @@
 <?php
 	require_once '../model/db_connect.php';
 	require_once '../model/db_functions.php';
-	require_once 'common_functions.php';
   
-  $firstname = clean($_POST['firstname']);
-  $lastname = clean($_POST['lastname']);
-  $email = clean($_POST['email']);
-  $password = clean($_POST['password']);
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
   
   storeNewUsers($firstname, $lastname, $email, $password);
   

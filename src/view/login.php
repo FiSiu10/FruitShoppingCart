@@ -1,5 +1,7 @@
 <?php 
-	require_once 'header.html'; 
+	session_start();
+
+	require_once 'header.php'; 
 ?>	
 <div class="container">
     <div class="row">

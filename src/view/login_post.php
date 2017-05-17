@@ -3,7 +3,6 @@
 
 	require_once '../model/db_connect.php';
 	require_once '../model/db_functions.php';
-	require_once 'common_functions.php';
   
     // Setup the error_message - empty string to start
     $error_message = '';
@@ -38,7 +37,7 @@
 	$_SESSION["custid"] = $result['cust_id'];
 	$_SESSION["custname"] = $result['cust_name'];
 
-	header('Location: test_login.php');
+	header('Location: /index.php');
 	
 	// to use
 	//print_r($_SESSION);
