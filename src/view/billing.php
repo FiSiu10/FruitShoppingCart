@@ -3,7 +3,7 @@
     require_once '../model/db_connect.php';
     require_once '../model/db_functions.php';
 
-	$custid = $_SESSION[‘custid’];
+	$custid = $_SESSION['custid'];
 	
 	// Get Names from Form -- use server-side validation (the filter_input function)
 	$shipFirstName = filter_input(INPUT_POST, 'shipFirstName', FILTER_SANITIZE_SPECIAL_CHARS);

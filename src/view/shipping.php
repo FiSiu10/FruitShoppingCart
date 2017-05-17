@@ -4,7 +4,7 @@
     require_once '../model/db_functions.php';
 
 	// Get Names from Form -- use server-side validation (the filter_input function)
-	$custid = $_SESSION[‘custid’];
+	$custid = $_SESSION['custid'];
     
     // Get result of filter_input() and check for missing or invalid data
     if (!isset($custid)) {
