@@ -13,7 +13,7 @@ if (empty($_SESSION['prod_id'])){
 
 array_push($_SESSION['itemQty'], $quantity);
 array_push($_SESSION['prod_id'], $prod_id);
-header('Location: shoppingcart.php');
+header('Location: /view/shoppingcart.php');
 
 /*for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
   echo "<p> Item quantity:" . $_SESSION['itemQty'][$i] . "
