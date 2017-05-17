@@ -9,11 +9,11 @@
                 <h2>Create Account</h2><br>
                 <div class="form-group">
                     <label for="firstname">First Name:</label>
-                    <input type="text" name="firstname" required class="form-control" id="firstname" placeholder="First Name">
+                    <input type="text" name="firstname" pattern="^[A-Z][a-z]+$" pattern="^[A-Z]'?[- a-zA-Z]+$" required class="form-control" id="firstname" placeholder="First Name">
                 </div>                
                 <div class="form-group">
                     <label for="lastname">Last Name:</label>
-                    <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Last Name">
+                    <input type="text" name="lastname" pattern="^[A-Z]'?[- a-zA-Z]+$" required class="form-control" id="lastname" placeholder="Last Name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address:</label>

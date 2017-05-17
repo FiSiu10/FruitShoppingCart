@@ -90,13 +90,13 @@ function checkUserExists($email, $password)
 {
     global $dbc;
 
-	$query = "SELECT cust_id, first_name ||' '|| last_name as cust_name
+	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name
 				FROM customer WHERE UPPER(email) = :email AND UPPER(password) = :password";
-	$statement = $dbc->prepare( $query );
+	$statement = $dbc->prepare( $query );	    
 	$statement->execute(array(':email'=>$email, ':password'=>$password));
-	$products = $statement->fetchAll();
+	$result = $statement->fetch();
 	$statement->closeCursor();
-	return $products;
+	return $result;
 }
 
 /**
