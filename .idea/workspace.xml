@@ -12,7 +12,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="shoppingcart.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shoppingcart.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -20,6 +20,16 @@
               <folding>
                 <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fruitpage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/fruitpage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -225,7 +235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11292000" />
+    <option name="totallyTimeSpent" value="11438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -273,16 +283,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -609,6 +609,14 @@
           <folding>
             <marker date="1494981124000" expanded="true" signature="1230:1291" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fruitpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
