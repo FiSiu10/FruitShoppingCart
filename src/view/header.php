@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +53,7 @@
 <body>
 <div class="jumbotron">
     <div class="container text-center">
-        <h1><img src = "view/images/1.png" width="350" height="193"></h1>
+        <h1><img src = "/view/images/1.png" width="350" height="193"></h1>
     </div>
 </div>
 <nav class="navbar navbar-inverse">
@@ -65,9 +68,19 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="../index.php">Home</a></li>
-                <li><a href="/view/aboutus.html">About Us</a></li>
-                <li><a href="/view/faq.html">FAQ</a></li>
+                <li><a href="/view/aboutus.php">About Us</a></li>
+                <li><a href="/view/faq.php">FAQ</a></li>
+<?php
+	if(!isset($_SESSION['custid']) || !isset($_SESSION['custname'])) {
+?>                  
                 <li><a href="/view/login.php">Login/Register</a></li>
+<?php
+    } else {        
+?>                                  
+                <li><a href="/view/logout.php">Logout</a></li>
+<?php
+	}
+?>                                  
             </ul>
 		        <form class="navbar-form navbar-left" role="search" id="navBarSearchForm">
 		        <div class="input-group">
@@ -78,7 +91,14 @@
 		        </div>
 		        </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+<?php
+	if(isset($_SESSION['custid']) && isset($_SESSION['custname'])) {
+?>             
+                <li><a href="#"><span class="glyphicon"></span> Hello, <?php echo $_SESSION['custname'];  ?></a></li>
+<?php
+	}
+?>                   
+                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
             </ul>
         </div>
     </div>

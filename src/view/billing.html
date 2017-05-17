@@ -68,16 +68,16 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="/\d+ [0-9a-zA-Z ]+/" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="address" placeholder="Address">
+                    <input pattern="/\d+ [0-9a-zA-Z ]+/" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="city" name="city" placeholder="City">
+                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="city" name="billCity" placeholder="City">
                 </div>
                 <div class="form-group">
                     <label>Province</label><br>
-                    <select name="province">
+                    <select name="billProvince">
                         <option value="AB">Alberta</option>
                         <option value="BC">British Columbia</option>
                         <option value="MB">Manitoba</option>
@@ -96,11 +96,11 @@
 				<div class="form-group">
                     <label for="postalcode">Postal Code</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="postalcode" placeholder="Postal Code">
+                    <input pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="billPostal" placeholder="Postal Code">
                 </div>
                 <div class="form-group">
                     <label>Country:</label><br>
-                    <select name="country">
+                    <select name="billCountry">
                         <option value="CA">Canada</option>
                     </select>
                 </div>

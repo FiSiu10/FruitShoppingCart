@@ -1,5 +1,7 @@
 <?php 
-	require_once 'header.html'; 
+	session_start();
+
+	require_once 'header.php'; 
 ?>	
 <div class="container">
     <div class="row">
@@ -13,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Password">                    
+                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Password">                    
                 </div><br>
                 <button type="submit" class="btn btn-default">Login</button>
             </form>

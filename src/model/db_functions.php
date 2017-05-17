@@ -102,13 +102,13 @@ function checkUserExists($email, $password)
 {
     global $dbc;
 
-	$query = "SELECT cust_id, first_name ||' '|| last_name as cust_name
+	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name
 				FROM customer WHERE UPPER(email) = :email AND UPPER(password) = :password";
-	$statement = $dbc->prepare( $query );
+	$statement = $dbc->prepare( $query );	    
 	$statement->execute(array(':email'=>$email, ':password'=>$password));
-	$products = $statement->fetchAll();
+	$result = $statement->fetch();
 	$statement->closeCursor();
-	return $products;
+	return $result;
 }
 
 /**
@@ -144,19 +144,20 @@ function getAllNames()
  *
  * @return void
  */
-function storeBillingAddress($address, $city, $province, $postalcode, $country)
+ /*
+function storeAddress($billAddress, $billCity, $billProvince, $billPostal, $billCountry)
 {
     global $dbc;
-
-    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_prov, bill_pc, bill_country)
-        		VALUES (:address, :city, :province, :postalcode, :country)';
+    
+    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_pc, bill_prov_id, bill_pc, bill_country_id, ship_addr, ship_city, ship_pc, ship_prov_id, ship_country_id) 
+        		VALUES (:billAddress, :billCity, :billPostal, :billProvince, :billCountry, :shipAddress, :shipCity, :shipPostal, :shipProvince, :shipCountry)';
     $statement = $dbc->prepare($query);
-    $statement->bindValue(':address', $address);
-    $statement->bindValue(':city', $city);
+    $statement->bindValue(':billAddress', $billAddress);
+    $statement->bindValue(':billCity', $billCity);
     $statement->bindValue(':province', $province);
-    $statement->bindValue(':postalcode', $postalcode);
-    $statement->bindValue(':country', $country);
+    $statement->bindValue(':billPostal', $billPostal);	
+    $statement->bindValue(':country', $country);        
     $statement->execute();
     $statement->closeCursor();
-}
+}*/
 ?>

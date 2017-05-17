@@ -1,5 +1,5 @@
 <?php
-	require_once 'view/header.html';
+	require_once 'view/header.php';
 	require_once 'model/db_connect.php';
 	require_once 'model/db_functions.php';
 
@@ -11,6 +11,7 @@
 
 		if($i % 3 == 0) {
 ?>
+
 <div class="container">
     <div class="row">
 <?php

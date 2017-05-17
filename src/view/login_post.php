@@ -1,28 +1,46 @@
 <?php
+	session_start();
+
 	require_once '../model/db_connect.php';
 	require_once '../model/db_functions.php';
-	require_once 'common_functions.php';
   
-  if (empty($_POST['email']) || empty($_POST['password']))
-  {
-    print "invalid arguments";
-    return;
-  }
-  
-  $email = clean($_POST['email']);
-  $password = clean($_POST['password']);
-  $email = strtoupper($email);
-  $password = strtoupper($password);
-  
-  $result = checkUserExists($email, $password);
-  
-  session_start();
-  setcookie(session_name(), session_id());
-  //ini_set("session.gc_maxlifetime", "18000");
-  if (!isset($_SESSION['cust_id']))
-  {
-    $_SESSION['cust_id'] = $result[0];
-    $_SESSION['cust_name'] = $result[1];
-  } 
-  redirect("../index.php");
-?>          
+    // Setup the error_message - empty string to start
+    $error_message = '';
+
+    // Get Email and password from Form -- use server-side validation (the filter_input function)
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password');
+
+	if(!isset($email) || !isset($password)) exit; 
+
+    // Get result of filter_input() and check for invalid data
+    if ($email === false) {
+        $error_message = 'Invalid email. ';
+    } elseif ($password === false) {
+        $error_message = 'Invalid password.';
+    }	
+
+    // Check if there is an error. Print it and then stop the Script.
+	if (!empty($error_message)) {
+        echo $error_message . '<p>Go <a href="login.php">back to the form</a></p>';
+        exit();
+    }
+
+	$result = checkUserExists($email, $password);
+
+	if($result == null) {
+		$error_message = 'Invalid email or password. ';
+		echo "<script>alert('" . $error_message . "');history.back();</script>";
+        exit();		
+	}
+
+	$_SESSION["custid"] = $result['cust_id'];
+	$_SESSION["custname"] = $result['cust_name'];
+
+	header('Location: /index.php');
+	
+	// to use
+	//print_r($_SESSION);
+	//print $_SESSION['custid'];
+	//print $_SESSION['custname'];
+?>
