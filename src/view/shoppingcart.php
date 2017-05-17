@@ -4,9 +4,10 @@ require_once '../model/db_connect.php';
 require_once '../model/db_functions.php';
 session_start();
 
-for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
+for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
 }
+
 
 for ($i = 0; $i < count($productInfo); $i++) {
     $prod = $productInfo[$i];
@@ -15,7 +16,7 @@ for ($i = 0; $i < count($productInfo); $i++) {
 //Calculate item total
 
 //Calculate cart subtotal
-    echo "
+echo "
     <div class='container'>
         <h2>Shopping Cart</h2>
         <table class='table table-striped'>
@@ -29,10 +30,8 @@ for ($i = 0; $i < count($productInfo); $i++) {
             </thead>
            ";
 
-    for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
-        $prod[$i]=$productInfo[$i];
-
-        echo "
+for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
+    echo "
                 <tbody>
                 <tr><td><h5>" . $prod['prod_name'] . "</h5>
                     </td>
@@ -50,8 +49,8 @@ for ($i = 0; $i < count($productInfo); $i++) {
                 </tr>
                 </tbody>
                 ";
-    }
-    echo "
+}
+echo "
             <tfoot>
                 <tr>
                     <td></td>
