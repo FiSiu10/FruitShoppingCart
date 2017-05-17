@@ -53,7 +53,7 @@
 <body>
 <div class="jumbotron">
     <div class="container text-center">
-        <h1><img src = "view/images/1.png" width="350" height="193"></h1>
+        <h1><img src = "/view/images/1.png" width="350" height="193"></h1>
     </div>
 </div>
 <nav class="navbar navbar-inverse">
@@ -98,7 +98,7 @@
 <?php
 	}
 ?>                   
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
+                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
             </ul>
         </div>
     </div>
