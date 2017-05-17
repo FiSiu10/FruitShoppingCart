@@ -90,22 +90,22 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form action="correct.php" method="post">
-                <h2>The Shipping Address you entered in the Form was:</h2>
+                <h4>The Shipping Address you entered in the Form was:</h4>
 				<!-- Note: Don't need htmlspecialchars() function here since these vars were already sanitized above -->
-				<h4 class="name">First Name: <?php echo $shipFirstName; ?></h4>
-				<h4 class="name">Last Name: <?php echo $shipLastName; ?></h4>
-				<h4 class="name">Street Address: <?php echo $shipAddress; ?></h4>
-				<h4 class="name">City: <?php echo $shipCity; ?></h4>
-				<h4 class="name">Province: <?php echo $shipProvince; ?></h4>
-				<h4 class="name">Postal Code: <?php echo $shipPostal; ?></h4>
-				<h4 class="name">Country: <?php echo $shipCountry; ?></h4><br>
-				<h2>The Billing Address you entered in the Form was:</h2>
+				<h5 class="name">First Name: <?php echo $shipFirstName; ?></h5>
+				<h5 class="name">Last Name: <?php echo $shipLastName; ?></h5>
+				<h5 class="name">Street Address: <?php echo $shipAddress; ?></h5>
+				<h5 class="name">City: <?php echo $shipCity; ?></h5>
+				<h5 class="name">Province: <?php echo $shipProvince; ?></h5>
+				<h5 class="name">Postal Code: <?php echo $shipPostal; ?></h5>
+				<h5 class="name">Country: <?php echo $shipCountry; ?></h5><br>
+				<h4>The Billing Address you entered in the Form was:</h4>
 				<!-- Note: Don't need htmlspecialchars() function here since these vars were already sanitized above -->
-				<h4 class="name">Street Address: <?php echo $billAddress; ?></h4>
-				<h4 class="name">City: <?php echo $billCity; ?></h4>
-				<h4 class="name">Province: <?php echo $billProvince; ?></h4>
-				<h4 class="name">Postal Code: <?php echo $billPostal; ?></h4>
-				<h4 class="name">Country: <?php echo $billCountry; ?></h4>
+				<h5 class="name">Street Address: <?php echo $billAddress; ?></h5>
+				<h5 class="name">City: <?php echo $billCity; ?></h5>
+				<h5 class="name">Province: <?php echo $billProvince; ?></h5>
+				<h5 class="name">Postal Code: <?php echo $billPostal; ?></h5>
+				<h5 class="name">Country: <?php echo $billCountry; ?></h5>
                 </div>
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
 				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
@@ -123,7 +123,7 @@
 				<input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
 				<input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
 				<input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
-				<h2>If the info on this page is correct please submit your order:</h2>
+				<h4>If the info on this page is correct please submit your order:</h4>
                 <button type="submit" class="btn btn-default">Continue to Stripe</button>
             </form>
         </div>
