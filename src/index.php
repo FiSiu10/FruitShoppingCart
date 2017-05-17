@@ -11,6 +11,7 @@
 
 		if($i % 3 == 0) {
 ?>
+
 <div class="container">
     <div class="row">
 <?php
