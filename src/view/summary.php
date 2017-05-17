@@ -3,6 +3,7 @@
     require_once '../model/db_connect.php';
     require_once '../model/db_functions.php';
 	
+	$custid = $_SESSION[‘custid’];
 	
 	 // Get Names from Form -- use server-side validation (the filter_input function)
 	$shipFirstName = filter_input(INPUT_POST, 'shipFirstName', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -33,6 +34,8 @@
         $error_message = 'Missing postal code.';		
 	} elseif (!isset($shipCountry)) {
         $error_message = 'Missing country.';
+	} elseif (!isset($custid)) {
+        $error_message = 'Not logged in.';
     } elseif ($shipAddress === false) {
         $error_message = 'Invalid address.';
     } elseif ($shipFirstName === false) {
@@ -67,6 +70,8 @@
         $error_message = 'Invalid postal code.';
 	} elseif ($billCountry === false) {		
         $error_message = 'Invalid country.';
+	} elseif ($custid === false) {		
+        $error_message = 'Invalid login.';
     } else {
         $error_message = '';
     }
@@ -102,6 +107,7 @@
 				<h4 class="name">Postal Code: <?php echo $billPostal; ?></h4>
 				<h4 class="name">Country: <?php echo $billCountry; ?></h4>
                 </div>
+				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
 				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
 				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
 				<input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>

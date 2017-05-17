@@ -3,7 +3,9 @@
     require_once '../model/db_connect.php';
     require_once '../model/db_functions.php';
 
-	    // Get Names from Form -- use server-side validation (the filter_input function)
+	$custid = $_SESSION[‘custid’];
+	
+	// Get Names from Form -- use server-side validation (the filter_input function)
 	$shipFirstName = filter_input(INPUT_POST, 'shipFirstName', FILTER_SANITIZE_SPECIAL_CHARS);
 	$shipLastName = filter_input(INPUT_POST, 'shipLastName', FILTER_SANITIZE_SPECIAL_CHARS);
 	$shipAddress = filter_input(INPUT_POST, 'shipAddress', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -27,6 +29,8 @@
         $error_message = 'Missing postal code.';		
 	} elseif (!isset($shipCountry)) {
         $error_message = 'Missing country.';
+	} elseif (!isset($custid)) {
+        $error_message = 'Not logged in.';
     } elseif ($shipAddress === false) {
         $error_message = 'Invalid address.';
     } elseif ($shipFirstName === false) {
@@ -41,6 +45,8 @@
         $error_message = 'Invalid postal code.';
 	} elseif ($shipCountry === false) {		
         $error_message = 'Invalid country.';
+	} elseif ($custid === false) {		
+        $error_message = 'Invalid login.';
     } else {
         $error_message = '';
     }
@@ -63,12 +69,12 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="\d+ [0-9a-zA-Z. ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
+                    <input required pattern="\d+ [0-9a-zA-Z. ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="city" name="billCity" placeholder="City">
+                    <input required pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="city" name="billCity" placeholder="City">
                 </div>
                 <div class="form-group">
                     <label>Province</label><br>
@@ -91,7 +97,7 @@
 				<div class="form-group">
                     <label for="postalcode">Postal Code</label>
 					<!-- do some client-side validation of form data -->
-                    <input pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="billPostal" placeholder="Postal Code">
+                    <input required pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="billPostal" placeholder="Postal Code">
                 </div>
                 <div class="form-group">
                     <label>Country:</label><br>
@@ -100,6 +106,7 @@
                     </select>
                 </div>
                 <br>
+				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
 				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
 				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
 				<input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>
