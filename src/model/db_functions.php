@@ -54,6 +54,18 @@ function getProductInfo($prod_id) {
 		return $productInfo;
 }
 
+function getCartInfo($prod_id) {
+    global $dbc;
+
+		$query = 'SELECT prod_name, unit_price FROM product WHERE prod_id = (:prod_id)';
+		$statement = $dbc->prepare($query);
+    $statement->bindValue(':prod_id', $prod_id);
+		$statement->execute();
+		$productInfo = $statement->fetchAll();
+		$statement->closeCursor();
+		return $productInfo;
+}
+
 
 /**
  * This function takes in a first and last name
@@ -120,7 +132,7 @@ function getAllNames()
 }
 */
 
-/** 
+/**
  * This function takes in a address, city, province, and country
  * and stores it in the database
  *
@@ -128,9 +140,9 @@ function getAllNames()
  * @param string $city - the city the user entered in the form.
  * @param string $province - the province the user entered in the form.
  * @param string $postalcode - the postal code the user entered in the form.
- * @param string $country - the country the user entered in the form.  
+ * @param string $country - the country the user entered in the form.
  *
- * @return void 
+ * @return void
  */
  /*
 function storeAddress($billAddress, $billCity, $billProvince, $billPostal, $billCountry)
