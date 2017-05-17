@@ -68,8 +68,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="../index.php">Home</a></li>
-                <li><a href="/view/aboutus.html">About Us</a></li>
-                <li><a href="/view/faq.html">FAQ</a></li>
+                <li><a href="/view/aboutus.php">About Us</a></li>
+                <li><a href="/view/faq.php">FAQ</a></li>
 <?php
 	if(!isset($_SESSION['custid']) || !isset($_SESSION['custname'])) {
 ?>                  
