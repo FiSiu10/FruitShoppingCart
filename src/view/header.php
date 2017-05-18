@@ -110,12 +110,12 @@
 <script>
 $(document).ready(function(){
  $('#srch-term').autocomplete({
-     source: "./view/search.php",
+     source: "/view/search.php",
      minLength: 2,
      select: function(event, ui) {
          var prod_id = ui.item.id;
          if (prod_id != '#') {
-             location.href = "allFruitInfo.php?prod_id="+prod_id;
+             location.href = "/allFruitInfo.php?prod_id="+prod_id;
          }
      },
      open: function(event, ui) {
