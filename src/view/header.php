@@ -115,7 +115,7 @@ $(document).ready(function(){
      select: function(event, ui) {
          var prod_id = ui.item.id;
          if (prod_id != '#') {
-             location.href = "allFruitInfo.php?prod_id="+prod_id;
+             location.href = "/allFruitInfo.php?prod_id="+prod_id;
          }
      },
      open: function(event, ui) {
