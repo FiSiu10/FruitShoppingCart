@@ -2,7 +2,7 @@
 session_start();
 require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
-require_once 'view/header.html';
+require_once 'view/header.php';
 
 
 $prod_id = filter_input(INPUT_GET,  'prod_id', FILTER_VALIDATE_INT);
@@ -13,6 +13,7 @@ for ($i = 0; $i < count($productInfo); $i++){
   $prod = $productInfo[$i];
 
 }
+$productStock = $prod['stock_amount'];
 
 ?>
 
@@ -41,8 +42,10 @@ for ($i = 0; $i < count($productInfo); $i++){
         <div class="col-sm-5">
             <div class="dropdown">
               <form action="addToCart.php" method="post">
-                  <input type="text" name="quantity" placeholder="quantity" />
+                Quantity:
+                  <input type="number" min="1" max="<?php print $productStock; ?>"name="quantity" placeholder="quantity" />
                   <input type="hidden" name="prod_id" value="<?php print $prod_id; ?>"/>
+                  <input type="hidden" name="stock" value="<?php print $productStock; ?>">
             </div>
         </div>
         <div class="col-sm-3">
