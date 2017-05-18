@@ -3,28 +3,27 @@ require_once 'header.php';
 require_once '../model/db_connect.php';
 require_once '../model/db_functions.php';
 session_start();
+$prod = array();
 
 for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
-
-
-    for ($i = 0; $i < count($productInfo); $i++) {
-        $prod = $productInfo[$i];
+    for ($j = 0; $j < count($productInfo); $j++) {
+        $prod[$i] = $productInfo[$j];
     }
 
     //Calculate item total
-    for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
-        $total = (int) $_SESSION['itemQty'][$i] * (int) $prod['unit_price'];
+    for ($k = 0; $k < count($_SESSION['itemQty']); $k++) {
+        $total = (int) $_SESSION['itemQty'][$k] * (int) $prod['unit_price'];
         $subtotal = $total + $total;
     }
 
     $grandtotal = $subtotal + 10;
 }
 
-for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
-    echo "<p> Item quantity:" . $_SESSION['itemQty'][$i] . "
-   Product ID: " . $_SESSION['prod_id'][$i] ."</p>";
-}
+//for ($c = 0; $c < count($_SESSION['itemQty']); $c++){
+//    echo "<p> Item quantity:" . $_SESSION['itemQty'][$c] . "
+//   Product ID: " . $_SESSION['prod_id'][$c] ."</p>";
+//}
 
 
 echo "
@@ -40,15 +39,18 @@ echo "
             </tr>
             </thead>
            ";
+//print count($_SESSION['itemQty']);
+for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
+//print $prod['prod_name'];
+//print "<br>";
 
-for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     echo "
                 <tbody>
-                <tr><td><h5>" . $prod['prod_name'] . "</h5>
+                <tr><td><h5>" . $prod[$m]['prod_name'] . "</h5>
                     </td>
-                    <td><h5>" . $_SESSION['itemQty'][$i] . "</h5>
+                    <td><h5>" . $_SESSION['itemQty'][$m] . "</h5>
                     </td>
-                    <td><h5>" . $prod['unit_price'] . "</h5>
+                    <td><h5>" . $prod[$m]['unit_price'] . "</h5>
                     </td>
                     <td>
                         <h5>$total</h5>
