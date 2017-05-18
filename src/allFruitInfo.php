@@ -2,7 +2,7 @@
 session_start();
 require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
-require_once 'view/header.html';
+require_once 'view/header.php';
 
 
 $prod_id = filter_input(INPUT_GET,  'prod_id', FILTER_VALIDATE_INT);
@@ -13,6 +13,8 @@ for ($i = 0; $i < count($productInfo); $i++){
   $prod = $productInfo[$i];
 
 }
+
+$productStock = $prod['stock_amount'];
 
 ?>
 
@@ -32,7 +34,7 @@ for ($i = 0; $i < count($productInfo); $i++){
     ?>
     <div class="row">
               <div class="col-sm-4"></div>
-              <div class="col-sm-8">Fruits are sold by the case.</div>
+              <div class="col-sm-8">Fruits are sold by the case. All cases contain 12 fruits.</div>
           </div>
     <br>
 
@@ -41,13 +43,15 @@ for ($i = 0; $i < count($productInfo); $i++){
         <div class="col-sm-5">
             <div class="dropdown">
               <form action="addToCart.php" method="post">
-                  <input type="text" name="quantity" placeholder="quantity" />
+                Quantity
+                  <input type="number" min="1" max="<?php print $productStock; ?>" style="width:100px; height:40px;" name="quantity" placeholder="Stock: <?php print $productStock; ?>" required />
                   <input type="hidden" name="prod_id" value="<?php print $prod_id; ?>"/>
+                  <input type="hidden" name="stock" value="<?php print $productStock; ?>" />
             </div>
         </div>
         <div class="col-sm-3">
             <div>
-                <a href = 'addToCart.php'><button type="submit" class="btn btn-primary btn-md">Add to Cart</button></a>
+                <button type="submit" class="btn btn-primary btn-md">Add to Cart</button>
             </div>
         </div>
         </form>
