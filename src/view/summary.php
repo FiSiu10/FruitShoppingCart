@@ -96,13 +96,34 @@
                 <div class="panel-heading">Shipping Address</div>
                 <div class="panel-body">
 				<!-- Note: Don't need htmlspecialchars() function here since these vars were already sanitized above -->
-					<h5 class="name">First Name:</h5> <h6><?php echo $shipFirstName; ?></h6>
+					<h5 class="name">First Name: <?php echo $shipFirstName; ?></h5>
 					<h5 class="name">Last Name: <?php echo $shipLastName; ?></h5>
 					<h5 class="name">Street Address: <?php echo $shipAddress; ?></h5>
 					<h5 class="name">City: <?php echo $shipCity; ?></h5>
 					<h5 class="name">Province: <?php echo $shipProvince; ?></h5>
 					<h5 class="name">Postal Code: <?php echo $shipPostal; ?></h5>
 					<h5 class="name">Country: <?php echo $shipCountry; ?></h5>
+					<br>
+			<form action="shipping.php" method="post">
+				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
+				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
+				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
+				<input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>
+				<input type="hidden" name="shipCity" value="<?php print $shipCity; ?>"/>
+				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
+				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
+				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
+				
+				<input type="hidden" name="billFirstName" value="<?php print $billFirstName; ?>"/>
+				<input type="hidden" name="billLastName" value="<?php print $billLastName; ?>"/>
+				<input type="hidden" name="billAddress" value="<?php print $billAddress; ?>"/>
+				<input type="hidden" name="billCity" value="<?php print $billCity; ?>"/>
+				<input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
+				<input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
+				<input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
+				<h5>If incorrect, please edit shipping address:</h5>
+				<button type="submit" class="btn btn-default">EDIT</button>
+			</form>
 				</div>
 			</div>
             <div class="panel panel-success">
@@ -113,6 +134,27 @@
 					<h5 class="name">Province: <?php echo $billProvince; ?></h5>
 					<h5 class="name">Postal Code: <?php echo $billPostal; ?></h5>
 					<h5 class="name">Country: <?php echo $billCountry; ?></h5>
+					<br>
+			<form action="billing.php" method="post">
+				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
+				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
+				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
+				<input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>
+				<input type="hidden" name="shipCity" value="<?php print $shipCity; ?>"/>
+				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
+				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
+				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
+				
+				<input type="hidden" name="billFirstName" value="<?php print $billFirstName; ?>"/>
+				<input type="hidden" name="billLastName" value="<?php print $billLastName; ?>"/>
+				<input type="hidden" name="billAddress" value="<?php print $billAddress; ?>"/>
+				<input type="hidden" name="billCity" value="<?php print $billCity; ?>"/>
+				<input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
+				<input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
+				<input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
+				<h5>If incorrect, please edit billing address:</h5>
+				<button type="submit" class="btn btn-default">EDIT</button>
+			</form>
 				</div>
 			</div>
             <div class="panel panel-success">
