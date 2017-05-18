@@ -6,16 +6,23 @@ session_start();
 
 for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
+
+
+    for ($i = 0; $i < count($productInfo); $i++) {
+        $prod = $productInfo[$i];
+    }
+
+    //Calculate item total
+    for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
+        $total = (int) $_SESSION['itemQty'][$i] * (int) $prod['unit_price'];
+        $subtotal = $total + $total;
+    }
+
+    $grandtotal = $subtotal + 10;
 }
 
 
-for ($i = 0; $i < count($productInfo); $i++) {
-    $prod = $productInfo[$i];
-}
 
-//Calculate item total
-
-//Calculate cart subtotal
 echo "
     <div class='container'>
         <h2>Shopping Cart</h2>
@@ -40,7 +47,7 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
                     <td><h5>" . $prod['unit_price'] . "</h5>
                     </td>
                     <td>
-                        <h5>$$$$$</h5>
+                        <h5>$total</h5>
                     </td>
                     <td>
                         <button type='button' class='btn btn-danger btn-sm'>
@@ -57,7 +64,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td><h5>Subtotal</h5></td>
-                    <td><h5>$$$$</h5></td>
+                    <td><h5>$subtotal</h5></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -71,17 +78,18 @@ echo "
                     <td></td>
                     <td></td>
                     <td><h5>Total</h5></td>
-                    <td><h5>$$$$</h5></td>
+                    <td><h5>$grandtotal</h5></td>
                 </tr>
                 <tr>
                     <td>
-                        <button type='button' class='btn btn-primary btn-md'><span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button>
+                        <button type='button' class='btn btn-default btn-md'><a href='../index.php'><span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button>
+                        </a>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <button type='button' class='btn btn-primary btn-md'>Purchase <span class='glyphicon glyphicon-chevron-right'></span></button>
+                        <button type='button' class='btn btn-default btn-md'><a href='login.php'>Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
                     </td>
                 </tr>
             </tfoot>
