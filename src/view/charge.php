@@ -1,5 +1,5 @@
 <?php
-require_once('./config.php');
+require_once('config.php');
 require('PHPMailer/PHPMailerAutoload.php');
 $token = filter_input(INPUT_POST, 'stripeToken', FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_POST, 'stripeEmail', FILTER_VALIDATE_EMAIL);
