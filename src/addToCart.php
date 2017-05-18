@@ -15,7 +15,6 @@ if (!isset($quantity)) {
 if (empty($_SESSION['prod_id'])){
   $_SESSION['prod_id'] = array();
 }
-//header('Location: /view/shoppingcart.php');
 
 if (!empty($error_message)) {
   echo $error_message;
@@ -24,10 +23,11 @@ if (!empty($error_message)) {
 } else {
   array_push($_SESSION['itemQty'], $quantity);
   array_push($_SESSION['prod_id'], $prod_id);
-  for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
+  /*for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
     echo "<p> Item quantity:" . $_SESSION['itemQty'][$i] . "
      Product ID: " . $_SESSION['prod_id'][$i] ."</p>";
-  }
-  echo "<a href = 'index.php'>Home</a>";
+  }*/
+  //echo "<a href = 'index.php'>Home</a>";
+  header('Location: /view/shoppingcart.php');
 }
 ?>
