@@ -21,6 +21,10 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $grandtotal = $subtotal + 10;
 }
 
+for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
+    echo "<p> Item quantity:" . $_SESSION['itemQty'][$i] . "
+   Product ID: " . $_SESSION['prod_id'][$i] ."</p>";
+}
 
 
 echo "
