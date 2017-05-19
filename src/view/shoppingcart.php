@@ -15,6 +15,11 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $grandTotal = $subtotal + 10;
 }
 
+function remove(){
+    unset($_SESSION["itemQty"]);
+    unset($_SESSION["prod_id"]);
+}
+
 echo "
     <div class='container'>
         <h2>Shopping Cart</h2>
@@ -36,10 +41,10 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
                     </td>
                     <td><h5>" . $_SESSION['itemQty'][$m] . "</h5>
                     </td>
-                    <td><h5>" . $prod[$m]['unit_price'] . "</h5>
+                    <td><h5>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</h5>
                     </td>
                     <td>
-                        <h5>$total[$m]</h5>
+                        <h5>" . '$ ' . number_format($total[$m], 2) . "</h5>
                     </td>
                     <td>
                         <button type='button' class='btn btn-danger btn-sm'>
@@ -56,38 +61,47 @@ echo "
                     <td></td>
                     <td></td>
                     <td><h5>Subtotal</h5></td>
-                    <td><h5>$subtotal</h5></td>
+                    <td><h5>" . '$ ' . number_format($subtotal, 2) . "</h5></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td><h5>Shipping</h5></td>
-                    <td><h5>$10.00</h5></td>
+                    <td><h5>$ 10.00</h5></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><h5>Total</h5></td>
-                    <td><h5>$grandTotal</h5></td>
+                    <td><h5>Grand Total</h5></td>
+                    <td><h5>" . '$ ' . number_format($grandTotal, 2) . "</h5></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> ";?>
+                    <td><h5><button type="button" class="btn btn-danger btn-sm" onClick="remove()">
+                            <span class="glyphicon glyphicon-remove"></span>  Empty Cart</button></h5></td>
                 </tr>
                 <tr>
                     <td>
-                        <button type='button' class='btn btn-default btn-md'><a href='../index.php'><span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button>
-                        </a>
+                        <button type="button" class="btn btn-default btn-md"><a href="../index.php">
+                                <span class="glyphicon glyphicon-chevron-left"></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <button type='button' class='btn btn-default btn-md'><a href='login.php'>Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
+                        <button type="button" class="btn btn-default btn-md"><a href="login.php">
+                                Purchase <span class="glyphicon glyphicon-chevron-right"></span></button></a>
                     </td>
                 </tr>
             </tfoot>
         </table>
-    </div>";
-?>
+    </div>
+
 
 </body>
 
