@@ -79,7 +79,7 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="billing.html">back to the form</a></p>';
+        echo $error_message . '<p>Go <a href="billing.php">back to the form</a></p>';
         exit();
     }
 
@@ -128,7 +128,7 @@
             <div class="panel panel-success">
 
                 </div>
-			<form action="correct.php" method="post">
+			<form action="checkout.php" method="post">
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
 				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
 				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
