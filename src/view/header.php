@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	$dspCntCartItem;
+    $cntCartItem = count($_SESSION['prod_id']);
+	if ($cntCartItem > 0) {
+        $dsCntCartItem = '(' . $cntCartItem . ')';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +104,7 @@
 <?php
 	}
 ?>                   
-                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
+                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <?php echo $dsCntCartItem ?> </a></li>
             </ul>
         </div>
     </div>
