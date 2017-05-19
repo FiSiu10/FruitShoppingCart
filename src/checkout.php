@@ -1,4 +1,7 @@
-<?php require_once('config.php'); ?>
+<?php require_once('config.php'); 
+//to do: grab and validate the total amount; will need to be passed from shopping cart form button
+$total = 0.40
+?>
 
 <form action="charge.php" method="post">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
