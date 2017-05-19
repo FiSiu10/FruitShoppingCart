@@ -1,6 +1,6 @@
 <?php
-require_once('./config.php');
-require('PHPMailer/PHPMailerAutoload.php');
+require_once('config.php');
+require('vendor/phpmailer/PHPMailer/PHPMailerAutoload.php');
 $token = filter_input(INPUT_POST, 'stripeToken', FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_POST, 'stripeEmail', FILTER_VALIDATE_EMAIL);
 $amount = filter_input(INPUT_POST, 'amount', FILTER_VALIDATE_INT);
