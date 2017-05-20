@@ -87,14 +87,14 @@ echo "
                 </tr>
                 <tr>
                     <td>
-                        <button type="button" class="btn btn-default btn-md"><a href="../index.php">
+                        <a href="../index.php"><button type="button" class="btn btn-default btn-md">
                                 <span class="glyphicon glyphicon-chevron-left"></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <button type="button" class="btn btn-default btn-md"><a href="login.php">
+                        <a href="login.php"><button type="button" class="btn btn-default btn-md">
                                 Purchase <span class="glyphicon glyphicon-chevron-right"></span></button></a>
                     </td>
                 </tr>
