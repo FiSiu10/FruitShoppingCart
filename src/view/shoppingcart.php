@@ -88,7 +88,7 @@ echo "
                 </tr>
                 <tr>
                     <td>
-                        <a href=''../index.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='../index.php'><button type='button' class='btn btn-default btn-md'>
                                 <span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
