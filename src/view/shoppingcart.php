@@ -15,7 +15,8 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $grandTotal = $subtotal + 10;
 }
 
-function remove(){
+function remove()
+{
     unset($_SESSION["itemQty"]);
     unset($_SESSION["prod_id"]);
 }
@@ -81,28 +82,29 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td> ";?>
-                    <td><h5><button type="button" class="btn btn-danger btn-sm" onClick="remove()">
-                            <span class="glyphicon glyphicon-remove"></span>  Empty Cart</button></h5></td>
+                    <td></td> 
+                    <td><h5><button type='button' class='btn btn-danger btn-sm'>
+                            <span class='glyphicon glyphicon-remove'></span>  Empty Cart</button></h5></td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="../index.php"><button type="button" class="btn btn-default btn-md">
-                                <span class="glyphicon glyphicon-chevron-left"></span>  Continue Shopping</button></a>
+                        <a href=''../index.php'><button type='button' class='btn btn-default btn-md'>
+                                <span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <a href="login.php"><button type="button" class="btn btn-default btn-md">
-                                Purchase <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+                        <a href='login.php'><button type='button' class='btn btn-default btn-md'>
+                                Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
                     </td>
                 </tr>
             </tfoot>
         </table>
     </div>
 
-
+    ";
+?>
 </body>
 
 </html>
