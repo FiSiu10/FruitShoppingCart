@@ -21,13 +21,16 @@ if (!empty($error_message)) {
 } else if ($quantity > $stock){
   echo $error_message;
 } else {
-  array_push($_SESSION['itemQty'], $quantity);
-  array_push($_SESSION['prod_id'], $prod_id);
-  /*for ($i = 0; $i < count($_SESSION['itemQty']); $i++){
-    echo "<p> Item quantity:" . $_SESSION['itemQty'][$i] . "
-     Product ID: " . $_SESSION['prod_id'][$i] ."</p>";
-  }*/
-  //echo "<a href = 'index.php'>Home</a>";
+  if (in_array($prod_id, $_SESSION['prod_id'])){
+    for ($i = 0; $i <= count($_SESSION['prod_id']); $i++){
+      if ($prod_id == $_SESSION['prod_id'][$i]){
+        $_SESSION['itemQty'][$i] += $quantity;
+      }
+    }
+  } else {
+    array_push($_SESSION['itemQty'], $quantity);
+    array_push($_SESSION['prod_id'], $prod_id);
+  }
   header('Location: /view/shoppingcart.php');
 }
 ?>

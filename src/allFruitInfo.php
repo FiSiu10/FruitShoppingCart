@@ -23,7 +23,7 @@ $productStock = $prod['stock_amount'];
       echo
        "<div class='row'>
           <div class='col-sm-4'>" . $prod['prod_name'] . "</div>
-          <div class='col-sm-8'>PRICE" . $prod['unit_price'] . "CAD</div>
+          <div class='col-sm-8'>PRICE" . " " . $prod['unit_price'] . "CAD</div>
         </div>
 
         <div class='row'>
@@ -43,14 +43,14 @@ $productStock = $prod['stock_amount'];
             <div class="dropdown">
               <form action="addToCart.php" method="post">
                 Quantity:
-                  <input type="number" min="1" max="<?php print $productStock; ?>"name="quantity" placeholder="quantity" />
+                  <input type="number" min="1" max="<?php print $productStock; ?>"name="quantity" placeholder="Stock: <?php print $productStock; ?>" />
                   <input type="hidden" name="prod_id" value="<?php print $prod_id; ?>"/>
                   <input type="hidden" name="stock" value="<?php print $productStock; ?>">
             </div>
         </div>
         <div class="col-sm-3">
             <div>
-                <a href = 'addToCart.php'><button type="submit" class="btn btn-primary btn-md">Add to Cart</button></a>
+                <button type="submit" class="btn btn-primary btn-md">Add to Cart</button>
             </div>
         </div>
         </form>
