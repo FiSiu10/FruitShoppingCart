@@ -1,34 +1,55 @@
 <?php
-	require_once '../model/db_connect.php';
-	require_once '../model/db_functions.php';
-  
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  
-  storeNewUsers($firstname, $lastname, $email, $password);
-  
-  echo "<table border='0' cellpadding='0' cellspacing='0' width='100%'>
-  <tbody>
-  <tr>
-  <td>
-  <font face='verdana' color='#000000' size='5'><strong>Thank you for signing up!</strong></font>
-  </td>
-  </tr>
-  <tr>
-  <td>&nbsp;</td>
-  </tr>
-  <tr>
-  <td>
-  <font face='verdana' color='#000000' size='3'>Please click the link below to complete the sign-up.</font>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <a href='http://deepblue.cs.camosun.bc.ca/~comp19900/php/SignUpVeri.php?b=$new_id' style='text-decoration:none' target='_blank'><font face='verdana' color='#04188f' size='4' style='text-decoration:underline'>Exotic Fruit</font></a>
-  </td>
-  </tr>
-  </tbody>
-  </table>";
+    session_start();
+
+    require_once 'header.php';
+    require_once '../model/db_connect.php';
+    require_once '../model/db_functions.php';
+
+    // Setup the error_message - empty string to start
+    $error_message = '';
+
+    // Get Email and password from Form -- use server-side validation (the filter_input function)
+    $firstname = filter_input(INPUT_POST, 'firstname');
+    $lastname = filter_input(INPUT_POST, 'lastname');
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password');
+
+    if(!isset($firstname) || !isset($lastname) || !isset($email) || !isset($password)) exit;
+
+    // Get result of filter_input() and check for invalid data
+    if ($firstname === false) {
+        $error_message = 'Invalid first name. ';
+    } elseif ($lastname === false) {
+        $error_message = 'Invalid last name. ';
+    } else if ($email === false) {
+        $error_message = 'Invalid email. ';
+    } elseif ($password === false) {
+        $error_message = 'Invalid password.';
+    }
+
+    // Check if there is an error. Print it and then stop the Script.
+    if (!empty($error_message)) {
+        echo "<script>alert('" . $error_message . "');history.back();</script>";
+        exit();
+    }
+
+    if(empty(checkUserExists($email))) {
+        storeNewUsers($firstname, $lastname, $email, password_hash($password, PASSWORD_DEFAULT));
+    } else {
+        $error_message = 'Email address already registered.';
+        echo "<script>alert('" . $error_message . "');history.back();</script>";
+        exit();
+    }
 ?>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Thank you for joining us!</h1>
+    </div>
+    <hr class="style1">
+    <div class="text-center">
+        <a href="/view/login.php" class="btn btn-info btn-lg" role="button">Continue to shopping</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -94,21 +94,21 @@ function storeNewUsers($firstname, $lastname, $email, $password)
 }
 
 /**
- * This function checkes if the email and password exists
+ * This function checkes if the email and password exists in order to ensure for logging on
  *
  * @return array $products - an assoc. array which contains all the products stored in the DB.
  */
-function checkUserExists($email, $password)
+function checkUserExists($email)
 {
     global $dbc;
 
-	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name
-				FROM customer WHERE UPPER(email) = :email AND UPPER(password) = :password";
-	$statement = $dbc->prepare( $query );	    
-	$statement->execute(array(':email'=>$email, ':password'=>$password));
-	$result = $statement->fetch();
+	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name, password
+				FROM customer WHERE UPPER(email) = UPPER(:email)";
+	$statement = $dbc->prepare( $query );
+    $statement->execute(array(':email'=>$email));
+    $user = $statement->fetch();
 	$statement->closeCursor();
-	return $result;
+	return $user;
 }
 
 /**

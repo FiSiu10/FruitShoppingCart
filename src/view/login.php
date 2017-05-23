@@ -32,20 +32,14 @@
             </div>
         </div>
         <div class="col-md-4"></div>
-    </div><br>
-	    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <form action="signup.php" method="post">
-                <div class="form-group">
-                    <label for="register">Create Account:</label>
-                </div>
-                <button type="submit" class="btn btn-default">Register</button>
-            </form>
-        </div>
-        <div class="col-md-4"></div>
     </div>
-</div><br><br>
+    <hr class="style1">
+    <div class="text-center">
+        <p>New to Exotic Fruits Website?</p>
+        <a href="/view/signup.php" class="btn btn-info btn-lg" role="button">Create your account</a>
+    </div>
+</div>
+<br><br>
 
 </body>
 </html>
