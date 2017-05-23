@@ -15,11 +15,6 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $grandTotal = $subtotal + 10;
 }
 
-function remove()
-{
-    unset($_SESSION["itemQty"]);
-    unset($_SESSION["prod_id"]);
-}
 
 echo "
     <div class='container'>
@@ -28,7 +23,8 @@ echo "
             <thead>
             <tr>
                 <th><h4>Product</h4></th>
-                <th><h4>Quantity</h4></th>
+                <th width='200px'><h4>Quantity</h4></th>
+                
                 <th><h4>Price</h4></th>
                 <th><h4>Total</h4></th>
             </tr>
@@ -40,7 +36,8 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
                 <tbody>
                 <tr><td><h5>" . $prod[$m]['prod_name'] . "</h5>
                     </td>
-                    <td><h5>" . $_SESSION['itemQty'][$m] . "</h5>
+                    <td><input type='number' min='1' placeholder=" . $_SESSION['itemQty'][$m] . "><button type='button' class='btn btn-default btn-xs'>
+                            <span class='glyphicon glyphicon-remove'></span>  Update</button>
                     </td>
                     <td><h5>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</h5>
                     </td>
