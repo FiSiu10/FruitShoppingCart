@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-	require_once '../model/db_connect.php';
-	require_once '../model/db_functions.php';
+	require_once 'model/db_connect.php';
+	require_once 'model/db_functions.php';
   
     // Setup the error_message - empty string to start
     $error_message = '';

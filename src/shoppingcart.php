@@ -1,7 +1,7 @@
 <?php
-require_once 'header.php';
-require_once '../model/db_connect.php';
-require_once '../model/db_functions.php';
+require_once 'view/header.php';
+require_once 'model/db_connect.php';
+require_once 'model/db_functions.php';
 session_start();
 $prod = array();
 
@@ -85,14 +85,14 @@ echo "
                 </tr>
                 <tr>
                     <td>
-                        <a href='../index.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='/index.php'><button type='button' class='btn btn-default btn-md'>
                                 <span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <a href='login.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='view/login.php'><button type='button' class='btn btn-default btn-md'>
                                 Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
                     </td>
                 </tr>

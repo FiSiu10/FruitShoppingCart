@@ -65,7 +65,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="../index.php">Home</a></li>
+                <li class="active"><a href="/index.php">Home</a></li>
                 <li><a href="/view/aboutus.php">About Us</a></li>
                 <li><a href="/view/faq.php">FAQ</a></li>
 <?php if(!isset($_SESSION['custid']) || !isset($_SESSION['custname'])) {?>
@@ -86,7 +86,7 @@
 <?php if(isset($_SESSION['custid']) && isset($_SESSION['custname'])) {?>
                 <li><a href="#"><span class="glyphicon"></span> Hello, <?php echo $_SESSION['custname'];  ?></a></li>
 <?php } ?>
-                <li><a href="/view/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <?php (count($_SESSION['prod_id']) > 0) ? print '(' . count($_SESSION['prod_id']) . ')': ""; ?> </a></li>
+                <li><a href="/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <?php (count($_SESSION['prod_id']) > 0) ? print '(' . count($_SESSION['prod_id']) . ')': ""; ?> </a></li>
             </ul>
         </div>
     </div>
@@ -98,7 +98,7 @@
 <script>
 $(document).ready(function(){
  $('#srch-term').autocomplete({
-     source: "/view/search.php",
+     source: "/search.php",
      minLength: 2,
      select: function(event, ui) {
          var prod_id = ui.item.id;

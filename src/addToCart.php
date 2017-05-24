@@ -31,6 +31,6 @@ if (!empty($error_message)) {
     array_push($_SESSION['itemQty'], $quantity);
     array_push($_SESSION['prod_id'], $prod_id);
   }
-  header('Location: /view/shoppingcart.php');
+  header('Location: shoppingcart.php');
 }
 ?>

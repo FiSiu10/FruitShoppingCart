@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form action="login_post.php" method="post">
+            <form action="/login_post.php" method="post">
                 <h2>Login</h2><br>
                 <div class="form-group">
                     <label for="email">Email address:</label>
