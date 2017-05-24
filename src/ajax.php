@@ -29,13 +29,15 @@ $prod_id = intval( $_GET["id"] );
 	
 	
 	
-	for ($i = 0; $i <= count($_SESSION['prod_id']); $i++){
+	for ($i = 0; $i < count($_SESSION['prod_id']); $i++){
       if ($prod_id == $_SESSION['prod_id'][$i]){
 		  echo 'if is true';
         //$_SESSION['itemQty'][$i] += $quantity;
 		unset($_SESSION['prod_id'][$i]);
 		//unset($_SESSION['itemQty'];
 		unset($_SESSION['itemQty'][$i]);
+		$_SESSION['itemQty'] = array_values($_SESSION['itemQty']);
+		$_SESSION['prod_id'] = array_values($_SESSION['prod_id']);
 		//unset($_SESSION['prod_id']);
 		//unset($_SESSION['itemQty']);
 		break;
@@ -78,6 +80,8 @@ case "empty":
 		unset($_SESSION['itemQty'][$i]);
 		//unset($_SESSION['prod_id']);
 		//unset($_SESSION['itemQty']);
+				$_SESSION['itemQty'] = array_values($_SESSION['itemQty']);
+		$_SESSION['prod_id'] = array_values($_SESSION['prod_id']);
 		break;
     }
 break;
