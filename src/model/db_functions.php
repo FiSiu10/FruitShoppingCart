@@ -57,7 +57,7 @@ function getProductInfo($prod_id) {
 function getCartInfo($prod_id) {
     global $dbc;
 
-		$query = 'SELECT prod_name, unit_price FROM product WHERE prod_id = (:prod_id)';
+		$query = 'SELECT prod_name, unit_price, prod_id FROM product WHERE prod_id = (:prod_id)';
 		$statement = $dbc->prepare($query);
     $statement->bindValue(':prod_id', $prod_id);
 		$statement->execute();
