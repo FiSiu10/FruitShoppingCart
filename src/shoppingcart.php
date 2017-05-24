@@ -1,8 +1,8 @@
 <?php
+session_start();
 require_once 'view/header.php';
 require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
-session_start();
 $prod = array();
 
 for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
@@ -45,7 +45,7 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
                         <h5>" . '$ ' . number_format($total[$m], 2) . "</h5>
                     </td>
                     <td>
-                        <button type='button' class='btn btn-danger btn-sm'>
+                        <button type='button' class='remove btn btn-danger btn-sm' data-id=" . $prod[$m]['prod_id'] . ">
                             <span class='glyphicon glyphicon-remove'></span>  Remove</button>
                     </td>
                 </tr>
@@ -80,7 +80,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td> 
-                    <td><h5><button type='button' class='btn btn-danger btn-sm'>
+                    <td><h5><button type='button' class='empty btn btn-danger btn-sm'>
                             <span class='glyphicon glyphicon-remove'></span>  Empty Cart</button></h5></td>
                 </tr>
                 <tr>
@@ -102,6 +102,44 @@ echo "
 
     ";
 ?>
+<script type="text/javascript">
+/*
+function removeItem() {
+	alert("Test");
+}*/
+
+$( "button.remove" ).on( "click" , function() {
+    var id = $(this).attr( "data-id" );
+    $.ajax({
+      type: "GET",
+      //url: "ajax.php?id=" + id
+	  url: "ajax.php?id=" + id + "&action=remove"
+		})
+    .done(function()
+    {
+      alert("Product has been removed.");
+	  $(document).ajaxStop(function(){
+		window.location.reload();
+});
+      //location.reload();
+    });
+  });
+    $( "button.empty" ).on( "click" , function() {
+		alert("test");
+    $.ajax({
+      type: "GET",
+      url: "ajax.php?action=empty"
+    })
+    .done(function()
+    {
+      alert("The cart has been emptied.");
+	  $(document).ajaxStop(function(){
+	window.location.reload();
+    });
+	      //location.reload();
+  });
+	});
+</script>
 </body>
 
 </html>
