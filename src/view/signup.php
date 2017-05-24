@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form action="./signup_post.php" method="post">
+            <form action="/signup_post.php" method="post">
                 <h2>Create Account</h2><br>
                 <div class="form-group">
                     <label for="firstname">First Name:</label>

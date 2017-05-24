@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    require_once 'header.php';
-    require_once '../model/db_connect.php';
-    require_once '../model/db_functions.php';
+    require_once 'view/header.php';
+    require_once 'model/db_connect.php';
+    require_once 'model/db_functions.php';
 
     // Setup the error_message - empty string to start
     $error_message = '';
@@ -47,7 +47,7 @@
     </div>
     <hr class="style1">
     <div class="text-center">
-        <a href="/view/login.php" class="btn btn-info btn-lg" role="button">Continue to shopping</a>
+        <a href="view/login.php" class="btn btn-info btn-lg" role="button">Continue to shopping</a>
     </div>
 </div>
 

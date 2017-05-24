@@ -1,6 +1,6 @@
 <?php
-	require_once '../model/db_connect.php';
-	require_once '../model/db_functions.php';
+	require_once 'model/db_connect.php';
+	require_once 'model/db_functions.php';
 
 	$keyword = trim($_REQUEST['term']); // this is user input
 	$sugg_json = array();    // this is for displaying json data as a autosearch suggestion

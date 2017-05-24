@@ -1,37 +1,37 @@
 <?php
     session_start();
     
-    require 'view/header.html';
+    require 'view/header.php';
     require_once 'model/db_connect.php';
     require_once 'model/db_functions.php';
 
     // Get Names from Form -- use server-side validation (the filter_input function)
-	$streetAddress = filter_input(INPUT_POST, 'shipAddress', FILTER_SANITIZE_SPECIAL_CHARS);
-	$city = filter_input(INPUT_POST, 'shipCity', FILTER_SANITIZE_SPECIAL_CHARS);
-	$province = filter_input(INPUT_POST, 'shipProvince', FILTER_SANITIZE_SPECIAL_CHARS);
-	$postalcode = filter_input(INPUT_POST, 'shipPostal', FILTER_SANITIZE_SPECIAL_CHARS);
-	$country = filter_input(INPUT_POST, 'shipCountry', FILTER_SANITIZE_SPECIAL_CHARS);
+	$streetAddress = filter_input(INPUT_POST, 'billAddress', FILTER_SANITIZE_SPECIAL_CHARS);
+	$city = filter_input(INPUT_POST, 'billCity', FILTER_SANITIZE_SPECIAL_CHARS);
+	$province = filter_input(INPUT_POST, 'billProvince', FILTER_SANITIZE_SPECIAL_CHARS);
+	$postalcode = filter_input(INPUT_POST, 'billPostal', FILTER_SANITIZE_SPECIAL_CHARS);
+	$country = filter_input(INPUT_POST, 'billCountry', FILTER_SANITIZE_SPECIAL_CHARS);
     
     // Get result of filter_input() and check for missing or invalid data
-    if (!isset($shipAddress)) {
+    if (!isset($billAddress)) {
         $error_message = 'Missing address.';
-    } elseif (!isset($shipCity)) {
+    } elseif (!isset($billCity)) {
         $error_message = 'Missing city.';
-	} elseif (!isset($shipProvince)) {
+	} elseif (!isset($billProvince)) {
         $error_message = 'Missing province.';
-	} elseif (!isset($shipPostal)) {
+	} elseif (!isset($billPostal)) {
         $error_message = 'Missing postal code.';		
-	} elseif (!isset($shipCountry)) {
+	} elseif (!isset($billCountry)) {
         $error_message = 'Missing country.';
-    } elseif ($shipAddress === false) {
+    } elseif ($billAddress === false) {
         $error_message = 'Invalid address.';
-    } elseif ($shipCity === false) {
+    } elseif ($billCity === false) {
         $error_message = 'Invalid city.';
-	} elseif ($shipProvince === false) {
+	} elseif ($billProvince === false) {
         $error_message = 'Invalid province.';
-	} elseif ($shipPostal === false) {
+	} elseif ($billPostal === false) {
         $error_message = 'Invalid postal code.';
-	} elseif ($shipCountry === false) {		
+	} elseif ($billCountry === false) {		
         $error_message = 'Invalid country.';
     } else {
         $error_message = '';
@@ -40,7 +40,7 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="shipping.html">back to the form</a></p>';
+        echo $error_message . '<p>Go <a href="billing.html">back to the form</a></p>';
         exit();
     }
 
@@ -69,7 +69,7 @@
     //    $_SESSION['names'][] = $fullName; // add name to end of names array
    // }
    
-   // Store shipping address in database
+   // Store billing address in database
    
     
     // Get Names from DB
