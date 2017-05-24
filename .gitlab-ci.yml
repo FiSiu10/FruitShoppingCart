@@ -104,8 +104,6 @@ deploy_db_to_dokku:
     - ssh dokku@$DEPLOY_SRV mysql:create $DBNAME
     # Import dump
     - ssh dokku@$DEPLOY_SRV mysql:import $DBNAME < dump.sql
-  # this is necessary so it doesn't fail on first deploy
-  allow_failure: true
   only:
     - master
     
@@ -119,8 +117,5 @@ deploy_app_to_dokku:
     - git push dokku@${DEPLOY_SRV}:$CI_PROJECT_NAME master
     # link to DB container
     - ssh dokku@$DEPLOY_SRV mysql:link $DBNAME $CI_PROJECT_NAME
-  environment:
-    name: production
-    url: http://${CI_PROJECT_NAME}.$DEPLOY_SRV
   only:
     - master
