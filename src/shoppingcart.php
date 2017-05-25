@@ -39,7 +39,7 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
     echo "
                 <tbody>
                 <tr><td>
-                        <h5>" . $prod[$m]['prod_name'] . "</h5>
+                        <h5><b>" . $prod[$m]['prod_name'] . "</b></h5>
                     </td>
                     <td>
                         <form action='updateCart.php' method='POST' name='update'>
@@ -70,6 +70,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td><h5>Subtotal</h5></td>
                     <td><h5>" . '$ ' . number_format($subtotal, 2) . "</h5></td>
                 </tr>
@@ -77,10 +78,12 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td><h5>Shipping</h5></td>
                     <td><h5>$ 10.00</h5></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -92,6 +95,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td> 
+                    <td></td>
                     <td><h5><button type='button' class='empty btn btn-danger btn-sm'>
                             <span class='glyphicon glyphicon-remove'></span>  Empty Cart</button></h5></td>
                 </tr>
@@ -100,6 +104,7 @@ echo "
                         <a href='/index.php'><button type='button' class='btn btn-default btn-md'>
                                 <span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button></a>
                     </td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
