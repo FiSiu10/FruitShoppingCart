@@ -14,8 +14,28 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $subtotal += $total[$i];
     $grandTotal = $subtotal + 10;
 }
+?>
 
+<script>
+    $(document).ready(){
+    $( "span.update-cart" ).on( "click" , function() {
+        var id = $(this).attr("data-id");
+        var qty = $(this).attr("data-qty");
+        $.ajax({
+            type: "POST",
+            url: "updateCart.php?id=" + id + "&action=update"
+            data: id,
+            data: qty;
+        })
+            .done(function () {
+                alert("Product has been updated.");
+                location.reload();
+            });
+    }
+    });
+</script>
 
+<?php
 echo "
     <div class='container'>
         <h2>Shopping Cart</h2>
@@ -24,7 +44,6 @@ echo "
             <tr>
                 <th><h4>Product</h4></th>
                 <th width='200px'><h4>Quantity</h4></th>
-                
                 <th><h4>Price</h4></th>
                 <th><h4>Total</h4></th>
             </tr>
@@ -36,8 +55,10 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
                 <tbody>
                 <tr><td><h5>" . $prod[$m]['prod_name'] . "</h5>
                     </td>
-                    <td><input type='number' min='1' placeholder=" . $_SESSION['itemQty'][$m] . "><button type='button' class='btn btn-default btn-xs'>
-                            <span class='glyphicon glyphicon-remove'></span>  Update</button>
+                    <td>
+                        <input type='number' min='1' placeholder=" . $_SESSION['itemQty'][$m] . "><button type='button' class='btn btn-default btn-xs'>
+                            <span class='glyphicon glyphicon-remove update-cart' data-qty= " . $_SESSION['itemQty'][$m] . " data-id=" . $prod[$m]['prod_id'] . "></span>  Update</button>
+                        </form>
                     </td>
                     <td><h5>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</h5>
                     </td>
