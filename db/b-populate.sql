@@ -272,7 +272,7 @@ VALUES
 ('ZM','Zambia'),
 ('ZW','Zimbabwe');*/
 
-INSERT INTO province
+/*INSERT INTO province
     (prov_id, prov_name, country_id)
 VALUES
 ('AB','Alberta','CA'),
@@ -287,4 +287,4 @@ VALUES
 ('SK','Saskatchewan','CA'),
 ('NT','Northwest Territories','CA'),
 ('NU','Nunavut','CA'),
-('YT','Yukon','CA');
+('YT','Yukon','CA');*/
