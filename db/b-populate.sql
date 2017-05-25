@@ -1,8 +1,8 @@
 INSERT INTO product
     (prod_name, prod_desc, stock_amount, unit_price, photo)
 VALUES
-    ('Durian', 'Popular in Southeast Asia, the durian is named after its spiky exterior. The husk, distinct smell, and size of the durian make the fruit distinctive.', '20', '45.00','view/images/durian.jpg'),
-    ('Rambutan', 'The rambutan is named after the hair skin covering it. The fruit inside is sweet, and contains a seed inside.', '250', '5.00','view/images/Rambutan.jpg'),
+    ('Durian', 'Popular in Southeast Asia, the durian is named after its spiky exterior. The husk, distinct smell, and size of the durian make the fruit distinctive. Sold: Individually', '20', '6.00','view/images/durian.jpg'),
+    ('Rambutan', 'The rambutan is named after the hair skin covering it. The fruit inside is sweet, and contains a seed inside.', '25', '5.00','view/images/Rambutan.jpg'),
     ('Mangosteen', 'The mangosteens fruity interior is tangy and sweet, while the hard purple rind is not edible.', '44', '2.50','view/images/PurpleMangosteen.jpg'),
     ('Salak', 'Snake fruit can be compared to pineapple in taste, with a tangy and sweet flavour. The name is from the scaly skin covering the fruit.', '34', '8.50','view/images/SnakeFruit.jpg'),
     ('Carambola', ' The star fruit is named for it is star-like appearance when cut in cross-section. The entire fruit can be eaten, providing juicy flavour with a crunch.', '51', '8.00','view/images/StarFruit.jpg'),

@@ -24,10 +24,10 @@ function searchProduct()
  *
  * @return array $products - an assoc. array which contains all the products stored in the DB.
  */
-function getAllProducts() {
+function getAllProducts($orderby) {
     global $dbc;
 
-	$query = 'SELECT prod_id, prod_name, prod_desc, stock_amount, unit_price, photo FROM product';
+	$query = 'SELECT prod_id, prod_name, prod_desc, stock_amount, unit_price, photo FROM product' . ' ' . $orderby;
 	$statement = $dbc->prepare($query);
 	$statement->execute();
 	$products = $statement->fetchAll();
@@ -104,7 +104,7 @@ function checkUserExists($email, $password)
 
 	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name
 				FROM customer WHERE UPPER(email) = :email AND UPPER(password) = :password";
-	$statement = $dbc->prepare( $query );	    
+	$statement = $dbc->prepare( $query );
 	$statement->execute(array(':email'=>$email, ':password'=>$password));
 	$result = $statement->fetch();
 	$statement->closeCursor();
@@ -148,15 +148,15 @@ function getAllNames()
 function storeAddress($billAddress, $billCity, $billProvince, $billPostal, $billCountry)
 {
     global $dbc;
-    
-    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_pc, bill_prov_id, bill_pc, bill_country_id, ship_addr, ship_city, ship_pc, ship_prov_id, ship_country_id) 
+
+    $query = 'INSERT INTO customer_order (bill_addr, bill_city, bill_pc, bill_prov_id, bill_pc, bill_country_id, ship_addr, ship_city, ship_pc, ship_prov_id, ship_country_id)
         		VALUES (:billAddress, :billCity, :billPostal, :billProvince, :billCountry, :shipAddress, :shipCity, :shipPostal, :shipProvince, :shipCountry)';
     $statement = $dbc->prepare($query);
     $statement->bindValue(':billAddress', $billAddress);
     $statement->bindValue(':billCity', $billCity);
     $statement->bindValue(':province', $province);
-    $statement->bindValue(':billPostal', $billPostal);	
-    $statement->bindValue(':country', $country);        
+    $statement->bindValue(':billPostal', $billPostal);
+    $statement->bindValue(':country', $country);
     $statement->execute();
     $statement->closeCursor();
 }*/
