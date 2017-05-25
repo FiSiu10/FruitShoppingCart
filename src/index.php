@@ -27,9 +27,9 @@ require_once 'model/db_functions.php';
   } else if (!empty($_GET['sort']) && $_GET['sort'] == 'prod_name_DSC'){
     $orderby_query = 'ORDER BY prod_name DESC';
   } else if (!empty($_GET['sort']) && $_GET['sort'] == 'unit_price_ASC'){
-    $orderby_query = 'ORDER BY unit_price ASC';
+    $orderby_query = 'ORDER BY convert(unit_price, decimal)';
   } else if (!empty($_GET['sort']) && $_GET['sort'] == 'unit_price_DSC'){
-    $orderby_query = 'ORDER BY unit_price DESC';
+    $orderby_query = 'ORDER BY convert(unit_price, decimal) DESC';
   }
 
 	$products = getAllProducts($orderby_query);
@@ -50,7 +50,7 @@ require_once 'model/db_functions.php';
         <div class='panel panel-success'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
             <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:300px;height:200px' alt='Image'></div>
-            <div class='panel-footer'>" . $prod['unit_price'] . "</div>
+            <div class='panel-footer'>" . "$" . $prod['unit_price'] . "</div>
         </div>
     </div></a>";
 		if($end == $i) {
