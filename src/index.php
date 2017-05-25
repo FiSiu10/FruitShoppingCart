@@ -4,9 +4,21 @@ require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
 ?>
 
-<div style="margin-left:150px;">
-	<form name="sort" method="get">
-		Sort by
+<style>
+    .welcome{
+        text-align: center;
+    }
+
+</style>
+
+<div class="welcome">
+    <h1>Welcome! <br></h1>
+        <h4>View our all our inventory below</h4>
+</div>
+
+
+<div style="margin-left:150px">
+	<form name="sort" method="get"> Sort by:
   	<select name="sort" onclick="this.form.submit">
       <option value="">--Select--</option>
 			<option value="prod_id">Product ID</option>

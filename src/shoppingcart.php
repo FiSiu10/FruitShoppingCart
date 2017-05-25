@@ -118,44 +118,36 @@ echo "
     </div>
 
     ";
+
 ?>
 <script type="text/javascript">
-/*
-function removeItem() {
-	alert("Test");
-}*/
-
 $( "button.remove" ).on( "click" , function() {
     var id = $(this).attr( "data-id" );
     $.ajax({
       type: "GET",
-      //url: "ajax.php?id=" + id
 	  url: "ajax.php?id=" + id + "&action=remove"
 		})
     .done(function()
     {
-      alert("Product has been removed.");
+      //alert("Product has been removed.");
 	  $(document).ajaxStop(function(){
 		window.location.reload();
-});
-      //location.reload();
+		});
     });
-  });
-    $( "button.empty" ).on( "click" , function() {
-		alert("test");
+});
+$( "button.empty" ).on( "click" , function() {
     $.ajax({
       type: "GET",
       url: "ajax.php?action=empty"
-    })
+		})
     .done(function()
     {
-      alert("The cart has been emptied.");
+      //alert("The cart has been emptied.");
 	  $(document).ajaxStop(function(){
 	window.location.reload();
-    });
-	      //location.reload();
-  });
+		});
 	});
+});
 </script>
 </body>
 
