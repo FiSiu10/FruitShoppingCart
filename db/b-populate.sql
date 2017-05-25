@@ -22,7 +22,7 @@ VALUES
     ('Kaffir Lime', 'The green skin of this fruit is bumpy and rough. The exterior, zest, and the leaves are all edible. Sold: Cases of 24 ', '12', '12.00','view/images/KaffirLime.jpg'),
     ('Sugar Apple', 'The flesh of the fruit is sweet, and could be compared to custard in taste. There may be multiple seeds inside that are not edible. Sold: Case of 12', '29', '8.00','view/images/SugarApple.jpg');
 
-INSERT INTO country
+/*INSERT INTO country
     (country_id, country_name)
 VALUES
 ('AF','Afghanistan'),
@@ -270,7 +270,7 @@ VALUES
 ('EH','Western Sahara'),
 ('YE','Yemen'),
 ('ZM','Zambia'),
-('ZW','Zimbabwe');
+('ZW','Zimbabwe');*/
 
 INSERT INTO province
     (prov_id, prov_name, country_id)
