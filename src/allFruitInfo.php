@@ -24,7 +24,7 @@ $productStock = $prod['stock_amount'];
        "<div class='row'>
             <div class='col-sm-4'><img src='" . $prod['photo'] . "' width='350px' height='250px'></div>
             <div class='col-sm-6'><h2>" . $prod['prod_name'] . "</h2></div>
-            <div class='col-sm-6'><h4>PRICE: $ " . " " . $prod['unit_price'] . " / Case of 12</h4></div>
+            <div class='col-sm-6'><h4>PRICE: $ " . " " . $prod['unit_price'] . "</h4></div>
             <div class='col-sm-6'><br></div>
             <div class='col-sm-6'><h5>Description: </div>
             <div class='col-sm-6'>" . $prod['prod_desc'] ."</div>

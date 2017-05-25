@@ -4,9 +4,21 @@ require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
 ?>
 
-<div style="margin-left:150px;">
-	<form name="sort" method="get">
-		Sort by
+<style>
+    .welcome{
+        text-align: center;
+    }
+
+</style>
+
+<div class="welcome">
+    <h1>Welcome! <br></h1>
+        <h4>View our all our inventory below</h4>
+</div>
+
+
+<div style="margin-left:150px">
+	<form name="sort" method="get"> Sort by:
   	<select name="sort" onclick="this.form.submit">
       <option value="">--Select--</option>
 			<option value="prod_id">Product ID</option>
@@ -49,7 +61,7 @@ require_once 'model/db_functions.php';
 		<a href='allFruitInfo.php?prod_id=" . $prod['prod_id'] . "'>
         <div class='panel panel-success'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
-            <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:300px;height:200px' alt='Image'></div>
+            <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:300px;height:200px;' alt='Image'></div>
             <div class='panel-footer'>" . $prod['unit_price'] . "</div>
         </div>
     </div></a>";
