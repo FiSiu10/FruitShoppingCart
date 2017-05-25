@@ -109,7 +109,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td>
-                        <a href='view/login.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='shipping.php'><button type='button' class='btn btn-default btn-md'>
                                 Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
                     </td>
                 </tr>
