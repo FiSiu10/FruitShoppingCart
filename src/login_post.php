@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-	require_once '../model/db_connect.php';
-	require_once '../model/db_functions.php';
+	require_once 'model/db_connect.php';
+	require_once 'model/db_functions.php';
   
     // Setup the error_message - empty string to start
     $error_message = '';
@@ -22,25 +22,22 @@
 
     // Check if there is an error. Print it and then stop the Script.
 	if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="login.php">back to the form</a></p>';
+        echo "<script>alert('" . $error_message . "');history.back();</script>";
         exit();
     }
 
-	$result = checkUserExists($email, $password);
+	$_user = checkUserExists($email);
 
-	if($result == null) {
+    //$success = ($result) ? 'True': 'False';
+
+	if(!password_verify($password, $_user['password'])) {
 		$error_message = 'Invalid email or password. ';
 		echo "<script>alert('" . $error_message . "');history.back();</script>";
         exit();		
 	}
 
-	$_SESSION["custid"] = $result['cust_id'];
-	$_SESSION["custname"] = $result['cust_name'];
+	$_SESSION["custid"] = $_user['cust_id'];
+	$_SESSION["custname"] = $_user['cust_name'];
 
 	header('Location: /index.php');
-	
-	// to use
-	//print_r($_SESSION);
-	//print $_SESSION['custid'];
-	//print $_SESSION['custname'];
 ?>

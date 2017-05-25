@@ -1,7 +1,7 @@
 <?php
-    require_once 'header.php';
-    require_once '../model/db_connect.php';
-    require_once '../model/db_functions.php';
+    require_once 'view/header.php';
+    require_once 'model/db_connect.php';
+    require_once 'model/db_functions.php';
 
 	$custid = $_SESSION['custid'];
 	

@@ -22,40 +22,38 @@ $productStock = $prod['stock_amount'];
     <?php
       echo
        "<div class='row'>
-          <div class='col-sm-4'>" . $prod['prod_name'] . "</div>
-          <div class='col-sm-8'>PRICE" . " " . $prod['unit_price'] . "CAD</div>
+            <div class='col-sm-4'><img src='" . $prod['photo'] . "' width='350px' height='250px'></div>
+            <div class='col-sm-6'><h2>" . $prod['prod_name'] . "</h2></div>
+            <div class='col-sm-6'><h4>PRICE: $ " . " " . $prod['unit_price'] . " / Case of 12</h4></div>
+            <div class='col-sm-6'><br></div>
+            <div class='col-sm-6'><h5>Description: </div>
+            <div class='col-sm-6'>" . $prod['prod_desc'] ."</div>
         </div>
-
-        <div class='row'>
-          <div class='col-sm-4'><img src='" . $prod['photo'] . "' width='100px' height='100px'></div>
-          <div class='col-sm-8'>" . $prod['prod_desc'] ."</div>
-        </div>";
+        "
     ?>
-    <div class="row">
-              <div class="col-sm-4"></div>
-              <div class="col-sm-8">Fruits are sold by the case.</div>
-          </div>
-    <br>
 
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-5">
+        <div class='col-sm-4'></div>
+        <div class="col-sm-4">
             <div class="dropdown">
-              <form action="addToCart.php" method="post">
-                Quantity:
-                  <input type="number" min="1" max="<?php print $productStock; ?>"name="quantity" placeholder="Stock: <?php print $productStock; ?>"/>
+              <form action="addToCart.php" method="post" >
+                <h4>Quantity:
+                  <input type="number" style="width:150px" min="1" max="<?php print $productStock; ?>"name="quantity" placeholder="Stock: <?php print $productStock; ?>" />
                   <input type="hidden" name="prod_id" value="<?php print $prod_id; ?>"/>
                   <input type="hidden" name="stock" value="<?php print $productStock; ?>">
+                </h4>
             </div>
         </div>
-        <div class="col-sm-3">
-            <div>
-                <button type="submit" class="btn btn-primary btn-md">Add to Cart</button>
-            </div>
-        </div>
-        </form>
     </div>
-
+      <div class="row">
+            <div class="col-sm-4"></div>
+            <div class='col-sm-4'></div>
+            <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary btn-md">Add to Cart</button>
+            </div>
+            </form>
+      </div>
 
   </div>
 </div>

@@ -57,7 +57,7 @@ function getProductInfo($prod_id) {
 function getCartInfo($prod_id) {
     global $dbc;
 
-		$query = 'SELECT prod_name, unit_price FROM product WHERE prod_id = (:prod_id)';
+		$query = 'SELECT prod_name, unit_price, prod_id FROM product WHERE prod_id = (:prod_id)';
 		$statement = $dbc->prepare($query);
     $statement->bindValue(':prod_id', $prod_id);
 		$statement->execute();
@@ -94,21 +94,21 @@ function storeNewUsers($firstname, $lastname, $email, $password)
 }
 
 /**
- * This function checkes if the email and password exists
+ * This function checkes if the email and password exists in order to ensure for logging on
  *
  * @return array $products - an assoc. array which contains all the products stored in the DB.
  */
-function checkUserExists($email, $password)
+function checkUserExists($email)
 {
     global $dbc;
 
-	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name
-				FROM customer WHERE UPPER(email) = :email AND UPPER(password) = :password";
+	$query = "SELECT cust_id, CONCAT(first_name,' ',last_name) AS cust_name, password
+				FROM customer WHERE UPPER(email) = UPPER(:email)";
 	$statement = $dbc->prepare( $query );
-	$statement->execute(array(':email'=>$email, ':password'=>$password));
-	$result = $statement->fetch();
+    $statement->execute(array(':email'=>$email));
+    $user = $statement->fetch();
 	$statement->closeCursor();
-	return $result;
+	return $user;
 }
 
 /**
