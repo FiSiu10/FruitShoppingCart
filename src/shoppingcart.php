@@ -5,6 +5,9 @@ require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
 $prod = array();
 
+$qty = filter_input(INPUT_POST, 'qty', FILTER_VALIDATE_INT);
+$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+
 for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
     $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
     for ($j = 0; $j < count($productInfo); $j++) {
@@ -16,25 +19,6 @@ for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
 }
 ?>
 
-<script>
-    $(document).ready(){
-    $( "span.update-cart" ).on( "click" , function() {
-        var id = $(this).attr("data-id");
-        var qty = $(this).attr("data-qty");
-        $.ajax({
-            type: "POST",
-            url: "updateCart.php?id=" + id + "&action=update"
-            data: id,
-            data: qty;
-        })
-            .done(function () {
-                alert("Product has been updated.");
-                location.reload();
-            });
-    }
-    });
-</script>
-
 <?php
 echo "
     <div class='container'>
@@ -43,7 +27,8 @@ echo "
             <thead>
             <tr>
                 <th><h4>Product</h4></th>
-                <th width='200px'><h4>Quantity</h4></th>
+                <th width='10px'><h4>Quantity</h4></th>
+                <th></th>
                 <th><h4>Price</h4></th>
                 <th><h4>Total</h4></th>
             </tr>
@@ -53,12 +38,18 @@ echo "
 for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
     echo "
                 <tbody>
-                <tr><td><h5>" . $prod[$m]['prod_name'] . "</h5>
+                <tr><td>
+                        <h5>" . $prod[$m]['prod_name'] . "</h5>
                     </td>
                     <td>
-                        <input type='number' min='1' placeholder=" . $_SESSION['itemQty'][$m] . "><button type='button' class='btn btn-default btn-xs'>
-                            <span class='glyphicon glyphicon-remove update-cart' data-qty= " . $_SESSION['itemQty'][$m] . " data-id=" . $prod[$m]['prod_id'] . "></span>  Update</button>
-                        </form>
+                        <form action='updateCart.php' method='POST' name='update'>
+                            <input type='number' min='1' name='qty' style='width: 70px' placeholder=" . $_SESSION['itemQty'][$m] . " >
+                            <input type='hidden' name='id' value=" . $prod[$m]['prod_id'] . ">
+                    </td>
+                    <td>
+                        <button type='submit' class='update btn btn-default btn-xs'> Update</button>  
+                    </td>
+                    </form>
                     </td>
                     <td><h5>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</h5>
                     </td>
