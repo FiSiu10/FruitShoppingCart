@@ -1,7 +1,7 @@
 <?php
-    require_once 'header.php';
-    require_once '../model/db_connect.php';
-    require_once '../model/db_functions.php';
+    require_once 'view/header.php';
+    require_once 'model/db_connect.php';
+    require_once 'model/db_functions.php';
 
 	// Get Names from Form -- use server-side validation (the filter_input function)
 	$custid = $_SESSION['custid'];
@@ -18,7 +18,7 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="login.php">please login to proceed.</a></p>';
+        echo $error_message . '<p>Go <a href="view/login.php">please login to proceed.</a></p>';
         exit();
     }
 	
