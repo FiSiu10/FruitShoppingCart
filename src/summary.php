@@ -1,7 +1,22 @@
 <?php
+
+	require_once('config.php');
+	session_start(); 
     require_once 'view/header.php';
     require_once 'model/db_connect.php';
     require_once 'model/db_functions.php';
+	
+	$prod = array();
+
+	for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
+		$productInfo = getCartInfo($_SESSION['prod_id'][$i]);
+		for ($j = 0; $j < count($productInfo); $j++) {
+			$prod[$i] = $productInfo[$j];
+		}
+		$total[$i] = (int) $_SESSION['itemQty'][$i] * $prod[$i]['unit_price'];
+		$subtotal += $total[$i];
+		$grandTotal = $subtotal + 10;
+}
 	
 	$custid = $_SESSION['custid'];
 	
@@ -128,7 +143,7 @@
             <div class="panel panel-success">
 
                 </div>
-			<form action="view/checkout.php" method="post">
+			<form action="charge.php" method="post">
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
 				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
 				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
@@ -146,7 +161,15 @@
 				<input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
 				<input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
 				<h4>If the info on this page is correct please submit your order:</h4>
-				<button type="submit" class="btn btn-default">Continue to Stripe</button>
+				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+					data-key="<?php echo $stripe['publishable_key']; ?>"
+					data-description="Payment Checkout"
+					data-amount="<?php echo $grandTotal * 100; ?>"
+					data-locale="auto"
+					data-currency="cad">
+				</script>
+				<input type="hidden" name="amount" value="<?php echo $grandTotal * 100; ?>" />
+				
 			</form>
         </div>
 
