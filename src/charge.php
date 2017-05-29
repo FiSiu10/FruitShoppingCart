@@ -1,4 +1,5 @@
 <?php
+include 'confirmationEmail.php';
 require_once('config.php');
 require_once 'vendor/autoload.php';
 //require('vendor/phpmailer/PHPMailer/PHPMailerAutoload.php');
