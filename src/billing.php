@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input required pattern="\d+ [0-9a-zA-Z. ]+" title="Must start with a number and can be followed by a number or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
+                    <input required pattern="\W*\d+\W*\d+ [0-9a-zA-Z. ]+" title="Use symbols, numbers or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
