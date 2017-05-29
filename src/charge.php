@@ -19,6 +19,9 @@ $charge = \Stripe\Charge::create(array(
 'amount' => $amount,
 'currency' => 'cad'
 ));
+
+sendConfirmationEmail($email);
+
 $amount = number_format(($amount / 100), 2);
 echo "<h1>Successfully charged $amount!</h1>";
 ?>
