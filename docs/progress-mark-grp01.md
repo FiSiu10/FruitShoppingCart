@@ -2,11 +2,11 @@
 
 | Criteria                                    | Wk 3 | Wk 4 | Wk 5 | Wk 6|
 | :-----------------------------------------: | ---- | ---- | ---- | --- |
-| Gantt Chart Updated (3 marks)               | 3    |   
-| Good Commit Msgs (2 marks)                  | 2    |    
-| Proper Branching & Merge Requests (3 marks) | 3    |
-| Issues, ToDos, Designated Work (2 marks)    | 1    |
-| **Total out of 10:**                        | 9    |
+| Gantt Chart Updated (3 marks)               | 3    | 3    |
+| Good Commit Msgs (2 marks)                  | 2    | 2    |    
+| Proper Branching & Merge Requests (3 marks) | 3    | 3    | 
+| Issues, ToDos, Designated Work (2 marks)    | 1    | 2    |
+| **Total out of 10:**                        | 9    | 10   |
 
 ## Comments:
 ### Wk. 3:
@@ -14,3 +14,9 @@
 * Commit msgs are excellent.
 * Good, branching and merge req.
 * Use the issue tracker for bugs, ideas, things to do.
+
+### Wk. 4:
+* Gantt looks fabulous! Dates are adjusted, tasks marked completed.
+* Commit msgs. are good.
+* Branching and Merging good. Branch names look good.
+* Issue tracker being used. Well done.
