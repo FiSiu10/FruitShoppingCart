@@ -74,7 +74,7 @@
                 <li><a href="/view/logout.php">Logout</a></li>
 <?php } ?>
             </ul>
-		        <form class="navbar-form navbar-left" role="search" id="navBarSearchForm">
+		        <form class="navbar-form navbar-left" role="search" id="navBarSearchForm" onsubmit="myFunction(); return false;">
 		        <div class="input-group">
 		            <input type="text" class="form-control" placeholder="Search" name="term" id="srch-term">
 		            <div class="input-group-btn">
@@ -92,6 +92,14 @@
     </div>
 </nav>
 
+<form name="searchFrm" method="get" action="/allFruitInfo.php">
+    <input type="hidden" name="prod_id" value="">
+</form>
+
+<script>
+    function myFunction() {}
+</script>
+
 <!-- Added by Roy for Search Bar -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -103,7 +111,9 @@ $(document).ready(function(){
      select: function(event, ui) {
          var prod_id = ui.item.id;
          if (prod_id != '#') {
-             location.href = "/allFruitInfo.php?prod_id="+prod_id;
+             //location.href = "/allFruitInfo.php?prod_id="+prod_id;
+             document.searchFrm.prod_id.value = prod_id;
+             document.searchFrm.submit();
          }
      },
      open: function(event, ui) {
