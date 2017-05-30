@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="93f8480a-3859-4f70-95f3-48f9fa9f060c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/charge.php" afterPath="$PROJECT_DIR$/src/charge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/confirmationEmail.php" afterPath="$PROJECT_DIR$/src/confirmationEmail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/emailConfirm.html" afterPath="$PROJECT_DIR$/src/view/emailConfirm.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +16,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateCart.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/updateCart.php">
+      <file leaf-file-name="emailConfirm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/emailConfirm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="1635">
+              <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirmationEmail.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/confirmationEmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="73" column="59" lean-forward="true" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="charge.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/charge.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -44,8 +65,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.php" />
         <option value="$PROJECT_DIR$/src/updateCart.php" />
         <option value="$PROJECT_DIR$/src/view/shoppingcart.php" />
-        <option value="$PROJECT_DIR$/src/confirmationEmail.php" />
         <option value="$PROJECT_DIR$/src/charge.php" />
+        <option value="$PROJECT_DIR$/src/view/emailConfirm.php" />
+        <option value="$PROJECT_DIR$/src/view/emailConfirm.html" />
+        <option value="$PROJECT_DIR$/src/confirmationEmail.php" />
       </list>
     </option>
   </component>
@@ -57,8 +80,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="722" />
-    <option name="width" value="718" />
+    <option name="x" value="670" />
+    <option name="width" value="770" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -193,14 +216,15 @@
       <workItem from="1495133624531" duration="216000" />
       <workItem from="1495153262246" duration="4096000" />
       <workItem from="1496085976508" duration="2940000" />
+      <workItem from="1496161337611" duration="1427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39020000" />
+    <option name="totallyTimeSpent" value="40447000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="722" y="0" width="718" height="900" extended-state="0" />
+    <frame x="670" y="0" width="770" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -234,8 +258,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/view/signup.php" />
-    <entry file="file://$PROJECT_DIR$/src/view/jasonheader.html" />
     <entry file="file://$PROJECT_DIR$/src/view/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -372,7 +394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -385,10 +406,35 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/shoppingcart.php" />
-    <entry file="file://$PROJECT_DIR$/src/sendConfirmationEmail.php">
+    <entry file="file://$PROJECT_DIR$/src/sendConfirmationEmail.php" />
+    <entry file="file://$PROJECT_DIR$/src/summary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="345">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/updateCart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/emailConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/emailConfirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -403,24 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/confirmationEmail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/summary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/updateCart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="537">
+          <caret line="73" column="59" lean-forward="true" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
           <folding />
         </state>
       </provider>

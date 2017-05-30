@@ -55,10 +55,20 @@ function sendConfirmationEmail($email){
     //Set the subject line
     $mail->Subject = 'Your Order Summary from The Exotic Fruit Company';
 
+    $name = 'Jane Doe';
+    $address = '123 ave';
+    $city = 'Victoria';
+    $province = 'BC';
+    $postalCode = 'V8Y 2K1';
+
+    $message = str_replace(array('%name%', '%address%', '%city%', '%province%', '%postalCode%'),
+        array($name, $address, $city, $province, $postalCode), file_get_contents('contents.html'));
+
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-    $mail->Body = 'Your email is ' . $email;
+    //$mail->Body = 'Your email is ' . $email;
+    $mail->msgHTML($message);
 
     //Replace the plain text body with one created manually
     //$mail->AltBody = 'This is a plain-text message body';
