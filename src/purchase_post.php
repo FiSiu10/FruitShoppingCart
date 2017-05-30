@@ -36,6 +36,7 @@
 //    print "<br>" . $ship_country;
 //    print "<br>custid=" . $custid . "<br>";
 
+
 /*
 if(!isset($firstname) || !isset($lastname) || !isset($email) || !isset($password)) exit;
 
@@ -57,8 +58,9 @@ if (!empty($error_message)) {
 }
 */
 //if(empty(checkUserExists($email))) {
-    $orderId = storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_country,$ship_first_name,
-        $ship_last_name,$ship_addr,$ship_city,$ship_pc,$ship_prov,$ship_country,$custid);
+    $orderId = storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_country,$custid);
+
+    updateCustomerOrder($ship_first_name,$ship_last_name,$ship_addr,$ship_city,$ship_pc,$ship_prov,$ship_country,$orderId);
 
     for ($i = 0; $i < count($_SESSION['prod_id']); $i++){
         storeOrderProduct($orderId,$_SESSION['prod_id'][$i],$_SESSION['itemQty'][$i]);

@@ -37,15 +37,12 @@ function storeOrderProduct($order_id,$prod_id,$qty)
  *
  * @return void
  */
-function storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_country,$ship_first_name,
-                            $ship_last_name,$ship_addr,$ship_city,$ship_pc,$ship_prov,$ship_country,$cust_id)
+function storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_country,$cust_id)
 {
     global $dbc;
 
-    $query = 'INSERT INTO customer_order (bill_addr,bill_city,bill_pc,bill_prov,bill_country,
-                ship_first_name,ship_last_name,ship_addr,ship_city,ship_pc,ship_prov,ship_country,cust_id)
-                VALUES (:bill_addr, :bill_city, :bill_pc, :bill_prov, :bill_country, :ship_first_name, 
-                :ship_last_name, :ship_addr, :ship_city, :ship_pc, :ship_prov, :ship_country, :cust_id)';
+    $query = 'INSERT INTO customer_order (bill_addr,bill_city,bill_pc,bill_prov,bill_country,cust_id)
+                VALUES (:bill_addr, :bill_city, :bill_pc, :bill_prov, :bill_country, :cust_id)';
 
     $statement = $dbc->prepare($query);
     $statement->bindValue(':bill_addr', $bill_addr);
@@ -53,6 +50,40 @@ function storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_coun
     $statement->bindValue(':bill_pc', $bill_pc);
     $statement->bindValue(':bill_prov', $bill_prov);
     $statement->bindValue(':bill_country', $bill_country);
+    $statement->bindValue(':cust_id', $cust_id);
+    $statement->execute();
+    $order_id = $dbc->lastInsertId();
+    $statement->closeCursor();
+
+    return $order_id;
+}
+
+/**
+ * This function takes in a first and last name
+ * and stores it in the database
+ *
+ * @param string $firstname - the firstName the user entered in the form.
+ * @param string $lastname - the lastName the user enterd in the form.
+ * @param string $email - the email the user enterd in the form.
+ * @param string $password - the password the user enterd in the form.
+ *
+ * @return void
+ */
+function updateCustomerOrder($ship_first_name,$ship_last_name,$ship_addr,$ship_city,$ship_pc,$ship_prov,$ship_country,$order_id)
+{
+    global $dbc;
+
+    $query = 'UPDATE customer_order SET 
+                ship_first_name = :ship_first_name,
+                ship_last_name = :ship_last_name,
+                ship_addr = :ship_addr,
+                ship_city = :ship_city,
+                ship_pc = :ship_pc,
+                ship_prov = :ship_prov,
+                ship_country = :ship_country
+              WHERE order_id = :order_id';
+
+    $statement = $dbc->prepare($query);
     $statement->bindValue(':ship_first_name', $ship_first_name);
     $statement->bindValue(':ship_last_name', $ship_last_name);
     $statement->bindValue(':ship_addr', $ship_addr);
@@ -60,12 +91,9 @@ function storeCustomerOrder($bill_addr,$bill_city,$bill_pc,$bill_prov,$bill_coun
     $statement->bindValue(':ship_pc', $ship_pc);
     $statement->bindValue(':ship_prov', $ship_prov);
     $statement->bindValue(':ship_country', $ship_country);
-    $statement->bindValue(':cust_id', $cust_id);
+    $statement->bindValue(':order_id', $order_id);
     $statement->execute();
-    $order_id = $dbc->lastInsertId();
     $statement->closeCursor();
-
-    return $order_id;
 }
 
 /**

@@ -14,6 +14,7 @@
             <div class="progress">
                 <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" area-valuemax="100" style="width:100%">
                     Purchase Completed!
+                    
                 </div>
             </div>
         </div>
