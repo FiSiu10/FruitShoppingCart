@@ -1,4 +1,5 @@
 <?php
+	session_start();
     require_once 'view/header.php';
     require_once 'model/db_connect.php';
     require_once 'model/db_functions.php';
@@ -18,7 +19,8 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="view/login.php">please login to proceed.</a></p>';
+        echo "<p><h3 style='color:red;margin-left:50px;'>$error_message </h3></p>"; 
+		echo '<p><h3 style="margin-left:50px;"><a href="view/login.php">Please login to proceed.</a></h3></p>';
         exit();
     }
 	
