@@ -60,9 +60,14 @@ function sendConfirmationEmail($email){
     $city = 'Victoria';
     $province = 'BC';
     $postalCode = 'V8Y 2K1';
+    $productName = 'Durian';
+    $productPrice = '$2.00';
+    $subtotal = '$2.00';
+    $grandTotal = '$12.00';
 
-    $message = str_replace(array('%name%', '%address%', '%city%', '%province%', '%postalCode%'),
-        array($name, $address, $city, $province, $postalCode), file_get_contents('contents.html'));
+
+    $message = str_replace(array('%name%', '%address%', '%city%', '%province%', '%postalCode%', '%productName%', '%productPrice%', '%subtotal%', '%grandTotal%'),
+        array($name, $address, $city, $province, $postalCode, $productName, $productPrice, $subtotal, $grandTotal), file_get_contents('contents.html'));
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
