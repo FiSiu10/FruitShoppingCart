@@ -94,7 +94,8 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo $error_message . '<p>Go <a href="billing.php">back to the form</a></p>';
+		echo "<p><h3 style='color:red;margin-left:50px;'>$error_message </h3></p>"; 
+		echo '<p><h3 style="margin-left:50px;"><a href="billing.php">Please go back to the billing form.</a></h3></p>';
         exit();
     }
 
