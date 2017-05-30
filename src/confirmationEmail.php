@@ -67,7 +67,7 @@ function sendConfirmationEmail($email){
 
 
     $message = str_replace(array('%name%', '%address%', '%city%', '%province%', '%postalCode%', '%productName%', '%productPrice%', '%subtotal%', '%grandTotal%'),
-        array($name, $address, $city, $province, $postalCode, $productName, $productPrice, $subtotal, $grandTotal), file_get_contents('contents.html'));
+        array($name, $address, $city, $province, $postalCode, $productName, $productPrice, $subtotal, $grandTotal), file_get_contents('view/emailConfirm.html'));
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
