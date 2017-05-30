@@ -36,15 +36,12 @@
 					<h2>
 						Order Confirmation
 					</h2>
-					<p>
-						Order # <strong class="text-info">1231231</strong>
-					</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<h4 class="text-danger">
-						Hello Fiona Siu,
+						Hello %name%,
 					</h4>
 					<p>
 						Thank you for shopping with us. We'll send a confirmation once your item has shipped. Your order details are indicated below.
@@ -54,17 +51,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<p>
-						Your guaranteed delivery date is: <br><strong>Monday, May 1</strong>
-					</p>
-				</div>
-				<div class="col-md-6">
-					<p>
 						Your order will be sent to:
 					</p>
 					<p>
-						<strong>Fiona Siu<br>
-						5065 Cordova Bay Road<br>
-						Victoria, British Columbia V8Y 2K1<br>
+						<strong>%name%<br>
+						%address%<br>
+						%city%, %province% %postalCode%<br>
 						Canada</strong>
 					</p>					
 				</div>
@@ -77,25 +69,15 @@
 				Order Details
 			</h4>
 			<hr size="30">
-			<p>
-				Order # <strong class="text-info">1231231</strong>
-			</p>
-			<p>
-				placed on Monday, May 29, 2017
-			</p>			
 			<div class="row">
-				<div class="col-md-3">
-					<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/">
-				</div>
 				<div class="col-md-5">
 					<div class="bd-callout bd-callout-warning">
-						<h4 id="conveying-meaning-to-assistive-technologies">Durian</h4>
-						<p>Popular in Southeast Asia, the durian is named after its spiky exterior. The husk, distinct smell, and size of the durian make the fruit distinctive. Sold: Individually</p>
+						<h4 id="conveying-meaning-to-assistive-technologies">%productName%</h4>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<p>
-						 <strong>$ 4.00</strong>
+						 <strong>%productPrice%</strong>
 					</p>
 				</div>
 			</div>
@@ -111,7 +93,7 @@
 							Subtotal:
 						</td>
 						<td width="30%" class="text-left">
-							$14.99
+							%subtotal%
 						</td>
 
 					</tr>
@@ -120,7 +102,7 @@
 							Shipping:
 						</td>
 						<td class="text-left">
-							$10
+							$10.00
 						</td>
 					</tr>
 					<tr>
@@ -128,7 +110,7 @@
 							Total:
 						</td>
 						<td class="text-left">
-							$15
+							%grandTotal%
 						</td>
 					</tr>
 
