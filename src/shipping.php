@@ -81,7 +81,8 @@
                         <option value="CA">Canada</option>
                     </select>
                 </div>
-                <br>
+				<input type="checkbox" name="same" value="same">Use shipping address for billing.
+				<br><br>
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
