@@ -13,16 +13,17 @@ $amount = filter_input(INPUT_POST, 'amount', FILTER_VALIDATE_INT);
 $shipFirstName = filter_input(INPUT_POST, 'shipFirstName', FILTER_SANITIZE_SPECIAL_CHARS);
 $shipLastName = filter_input(INPUT_POST, 'shipLastName', FILTER_SANITIZE_SPECIAL_CHARS);
 $shipAddress = filter_input(INPUT_POST, 'shipAddress', FILTER_SANITIZE_SPECIAL_CHARS);
+$shipCountry = filter_input(INPUT_POST, 'shipCountry', FILTER_SANITIZE_SPECIAL_CHARS);
 $shipCity = filter_input(INPUT_POST, 'shipCity', FILTER_SANITIZE_SPECIAL_CHARS);
 $shipProvince = filter_input(INPUT_POST, 'shipProvince', FILTER_SANITIZE_SPECIAL_CHARS);
 $shipPostal = filter_input(INPUT_POST, 'shipPostal', FILTER_SANITIZE_SPECIAL_CHARS);
-$shipProviceCountry = $shipCity . ", " . $shipProvince . " Canada";
+$shipProviceCountry = $shipCity . ", " . $shipProvince . " " . $shipCountry;
 $billAddress = filter_input(INPUT_POST, 'billAddress', FILTER_SANITIZE_SPECIAL_CHARS);
 $billCity = filter_input(INPUT_POST, 'billCity', FILTER_SANITIZE_SPECIAL_CHARS);
 $billProvince = filter_input(INPUT_POST, 'billProvince', FILTER_SANITIZE_SPECIAL_CHARS);
 $billPostal = filter_input(INPUT_POST, 'billPostal', FILTER_SANITIZE_SPECIAL_CHARS);
 $billCountry = filter_input(INPUT_POST, 'billCountry', FILTER_SANITIZE_SPECIAL_CHARS);
-$billProvinceCountry = $shipCity . ", " . $$shipProvince . " Canada";
+$billProvinceCountry = $billCity . ", " . $billProvince . " " . $billCountry;
 if (!isset($shipAddress)) {
       $error_message = 'Missing address.';
 } elseif (!isset($shipFirstName)) {
@@ -205,11 +206,18 @@ $amount = number_format(($amount / 100), 2);
 </div><br><br>
 
 <form method="post" name="frm" action="purchase_post.php">
-    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
-    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
-    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
-    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
-    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+    <input type="hidden" name="bill_addr" value="<?php print $billAddress  ?>">
+    <input type="hidden" name="bill_city" value="<?php print $billCity ?>">
+    <input type="hidden" name="bill_pc" value="<?php print $billPostal ?>">
+    <input type="hidden" name="bill_prov" value="<?php print $billProvince ?>">
+    <input type="hidden" name="bill_country" value="<?php print $billCountry ?>">
+    <input type="hidden" name="ship_first_name" value="<?php print $shipFirstName ?>">
+    <input type="hidden" name="ship_last_name" value="<?php print $shipLastName ?>">
+    <input type="hidden" name="ship_addr" value="<?php print $shipAddress ?>">
+    <input type="hidden" name="ship_city" value="<?php print $shipCity ?>">
+    <input type="hidden" name="ship_pc" value="<?php print $shipPostal ?>">
+    <input type="hidden" name="ship_prov" value="<?php print $shipProvince ?>">
+    <input type="hidden" name="ship_country" value="<?php print $shipCountry ?>">
 </form>
 
 </body>
