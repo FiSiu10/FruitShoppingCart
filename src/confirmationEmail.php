@@ -1,7 +1,6 @@
 <?php
 
-function sendConfirmationEmail($email){
-
+function sendConfirmationEmail($email, $name, $shipAddress, $shipCity, $shipProvince, $shipPostal){
     //SMTP needs accurate times, and the PHP time zone MUST be set
     //This should be done in your php.ini, but this is how to do it if you don't have access to that
     date_default_timezone_set('America/Vancouver');
@@ -44,30 +43,30 @@ function sendConfirmationEmail($email){
     $mail->Password = "ics199grp1!";
 
     //Set who the message is to be sent from
-    $mail->setFrom('noreply@exoticfruit.com', 'Customer Service');
+    $mail->setFrom('noreply@theexoticfruitcompany.com', 'The Exotic Fruit Company');
 
     //Set an alternative reply-to address
     //$mail->addReplyTo('replyto@example.com', 'First Last');
 
     //Set who the message is to be sent to
-    $mail->addAddress($email, 'John Doe');
+    $mail->addAddress($email, $name);
 
     //Set the subject line
     $mail->Subject = 'Your Order Summary from The Exotic Fruit Company';
 
-    $name = 'Jane Doe';
-    $address = '123 ave';
-    $city = 'Victoria';
-    $province = 'BC';
-    $postalCode = 'V8Y 2K1';
-    $productName = 'Durian';
-    $productPrice = '$2.00';
-    $subtotal = '$2.00';
-    $grandTotal = '$12.00';
+    //$name = 'Jane Doe';
+    //$address = '123 ave';
+    //$shipCity = 'Victoria';
+    //$province = 'BC';
+    //$postalCode = 'V8Y 2K1';
+    //$productName = 'Durian';
+    //$productPrice = '$2.00';
+    //$subtotal = '$2.00';
+    //$grandTotal = '$12.00';
 
 
     $message = str_replace(array('%name%', '%address%', '%city%', '%province%', '%postalCode%', '%productName%', '%productPrice%', '%subtotal%', '%grandTotal%'),
-        array($name, $address, $city, $province, $postalCode, $productName, $productPrice, $subtotal, $grandTotal), file_get_contents('view/emailConfirm.html'));
+        array($name, $shipAddress, $shipCity, $shipProvince, $shipPostal), file_get_contents('view/emailConfirm.html'));
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
