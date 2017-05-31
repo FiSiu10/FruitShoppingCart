@@ -187,7 +187,7 @@ $amount = number_format(($amount / 100), 2);
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default" onclick="window.location.href='/view/purchaseComplete.php'">Make Purchase</button>
+                <button type="submit" class="btn btn-default" onclick="javascript:document.frm.submit();">Make Purchase</button>
         </div>
 
     </div><br>
@@ -203,6 +203,14 @@ $amount = number_format(($amount / 100), 2);
         <div class="col-md-4"></div>
     </div>
 </div><br><br>
+
+<form method="post" name="frm" action="purchase_post.php">
+    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+    <input type="hidden" name="bill_addr" value="147-1728 Newton St">
+</form>
 
 </body>
 </html>
