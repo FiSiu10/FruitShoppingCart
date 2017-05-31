@@ -84,6 +84,6 @@ function sendConfirmationEmail($email, $name, $shipAddress, $shipCity, $shipProv
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "Message sent!";
+        echo "<div class='panel-body'>Confirmation email sent!</div>";
     }
 }
