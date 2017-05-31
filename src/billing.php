@@ -72,7 +72,7 @@
                 <div class="form-group">
                     <label for="address">Street Address:</label>
 					<!-- do some client-side validation of form data -->
-                    <input required pattern="\W*\d+\W*\d+ [0-9a-zA-Z. ]+" title="Use symbols, numbers or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address" value="<?php if ($same) print $shipAddress; ?>"/>
+                    <input required pattern="\W*\d+\W*\d* [0-9a-zA-Z. ]+" title="Use symbols, numbers or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address" value="<?php if ($same) print $shipAddress; ?>"/>
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
@@ -84,16 +84,16 @@
                     <select name="billProvince">
 					    <option value="AB" <?php if ($same) { if ($shipProvince == 'AB') { echo 'selected="selected"';} } ?>"/>Alberta</option>
                         <option value="BC" <?php if ($same) { if ($shipProvince == 'BC') { echo 'selected="selected"'; } } ?>"/>British Columbia</option>
-                        <option value="MB" <?php if ($same) { if ($shipProvince == 'MB') { echo 'selected="selected"'; } } ?>"/>>Manitoba</option>
-                        <option value="NB" <?php if ($same) { if ($shipProvince == 'NB') { echo 'selected="selected"'; } } ?>"/>>New Brunswick</option>
-                        <option value="NL" <?php if ($same) { if ($shipProvince == 'NL') { echo 'selected="selected"'; } } ?>"/>>Newfoundland and Labrador</option>
-                        <option value="NS" <?php if ($same) { if ($shipProvince == 'NS') { echo 'selected="selected"'; } } ?>"/>>Nova Scotia</option>
-                        <option value="ON" <?php if ($same) { if ($shipProvince == 'ON') { echo 'selected="selected"'; } } ?>"/>>Ontario</option>
-                        <option value="PE" <?php if ($same) { if ($shipProvince == 'PE') { echo 'selected="selected"'; } } ?>"/>>Prince Edward Island</option>
-                        <option value="QC" <?php if ($same) { if ($shipProvince == 'QC') { echo 'selected="selected"'; } } ?>"/>>Quebec</option>
-                        <option value="SK" <?php if ($same) { if ($shipProvince == 'SK') { echo 'selected="selected"'; } } ?>"/>>Saskatchewan</option>
-                        <option value="NT" <?php if ($same) { if ($shipProvince == 'NT') { echo 'selected="selected"'; } } ?>"/>>Northwest Territories</option>
-                        <option value="NU" <?php if ($same) { if ($shipProvince == 'NU') { echo 'selected="selected"'; } } ?>"/>>Nunavut</option>
+                        <option value="MB" <?php if ($same) { if ($shipProvince == 'MB') { echo 'selected="selected"'; } } ?>"/>Manitoba</option>
+                        <option value="NB" <?php if ($same) { if ($shipProvince == 'NB') { echo 'selected="selected"'; } } ?>"/>New Brunswick</option>
+                        <option value="NL" <?php if ($same) { if ($shipProvince == 'NL') { echo 'selected="selected"'; } } ?>"/>Newfoundland and Labrador</option>
+                        <option value="NS" <?php if ($same) { if ($shipProvince == 'NS') { echo 'selected="selected"'; } } ?>"/>Nova Scotia</option>
+                        <option value="ON" <?php if ($same) { if ($shipProvince == 'ON') { echo 'selected="selected"'; } } ?>"/>Ontario</option>
+                        <option value="PE" <?php if ($same) { if ($shipProvince == 'PE') { echo 'selected="selected"'; } } ?>"/>Prince Edward Island</option>
+                        <option value="QC" <?php if ($same) { if ($shipProvince == 'QC') { echo 'selected="selected"'; } } ?>"/>Quebec</option>
+                        <option value="SK" <?php if ($same) { if ($shipProvince == 'SK') { echo 'selected="selected"'; } } ?>"/>Saskatchewan</option>
+                        <option value="NT" <?php if ($same) { if ($shipProvince == 'NT') { echo 'selected="selected"'; } } ?>"/>Northwest Territories</option>
+                        <option value="NU" <?php if ($same) { if ($shipProvince == 'NU') { echo 'selected="selected"'; } } ?>"/>Nunavut</option>
                         <option value="YT" <?php if ($same) { if ($shipProvince == 'YT') { echo 'selected="selected"'; } } ?>"/>Yukon</option>
                     </select>
                 </div>
