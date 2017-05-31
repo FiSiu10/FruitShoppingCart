@@ -11,30 +11,37 @@
 
 
 <style>
-/* borderless table */
-.table.table-borderless td, .table.table-borderless th {
-    border: 0 !important;
-}
+	/* borderless table */
+	.table.table-borderless td, .table.table-borderless th {
+		border: 0 !important;
+	}
+	.table.table-borderless {
+		margin-bottom: 0px;
+	}
 
-.table.table-borderless {
-    margin-bottom: 0px;
-}
+	div.logo{
+		text-align: center;
+	}
+
 </style>
   </head>
   <body>
 
-    <div class="container-fluid">
+    <div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-12">
-					<img src="images/small_logo2.png" width="170px" height="150px">
+					<div class="logo"><img src="../view/images/small_logo.png" width="300px" height="170px" align="middle"></div>
 				</div>
 			</div>
+			<div class="row"></div>
 			<div class="row">
 				<div class="col-md-12">
 					<h2>
+                        <hr>
 						Order Confirmation
+                        <hr>
 					</h2>
 				</div>
 			</div>
@@ -44,13 +51,15 @@
 						Hello %name%,
 					</h4>
 					<p>
-						Thank you for shopping with us. We'll send a confirmation once your item has shipped. Your order details are indicated below.
+						Thank you for shopping with us! Your order details are indicated below.
 					</p>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-md-6">
 					<p>
+                        <br>
 						Your order will be sent to:
 					</p>
 					<p>
@@ -58,6 +67,9 @@
 						%address%<br>
 						%city%, %province% %postalCode%<br>
 						Canada</strong>
+                        <br>
+                        <br>
+                        <br>
 					</p>					
 				</div>
 			</div>
@@ -65,68 +77,47 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h4 class="text-warning">
-				Order Details
-			</h4>
-			<hr size="30">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="bd-callout bd-callout-warning">
-						<h4 id="conveying-meaning-to-assistive-technologies">%productName%</h4>
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3>Order Details</h3></div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<td><h4><strong>%productName%</strong></h4></td>
+                                </tr>
+                                <tr>
+									<td></td>
+                                    <td></td>
+									<td><strong>%productPrice%</strong></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+
+									<td></td>
+									<td><strong>Subtotal</strong></td>
+									<td>%subtotal%</td>
+								</tr>
+								<tr>
+
+									<td></td>
+									<td><strong>Shipping</strong></td>
+									<td>$10.00</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><strong>Grand Total</strong></td>
+									<td>%grandTotal%</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<p>
-						 <strong>%productPrice%</strong>
-					</p>
-				</div>
-			</div>
-			<hr size="30">			
-			<div class="row">
-			
-			
-		<div class="col-md-12">
-			<table class="table table-borderless">
-				<tbody>
-					<tr>
-						<td width="70%" class="text-right">
-							Subtotal:
-						</td>
-						<td width="30%" class="text-left">
-							%subtotal%
-						</td>
-
-					</tr>
-					<tr>
-						<td width="70%" class="text-right">
-							Shipping:
-						</td>
-						<td class="text-left">
-							$10.00
-						</td>
-					</tr>
-					<tr>
-						<td width="70%" class="text-right">
-							Total:
-						</td>
-						<td class="text-left">
-							%grandTotal%
-						</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-		
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-		</div>
 	</div>
-</div>
-
 
   </body>
 </html>

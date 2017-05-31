@@ -16,6 +16,10 @@ if (empty($_SESSION['prod_id'])){
   $_SESSION['prod_id'] = array();
 }
 
+if ($quantity == 0){
+    $quantity = 1;
+}
+
 if (!empty($error_message)) {
   echo $error_message;
 } else if ($quantity > $stock){
