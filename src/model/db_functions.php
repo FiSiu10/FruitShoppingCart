@@ -11,6 +11,80 @@
  *
  * @return void
  */
+function updatePassword($password, $cust_id)
+{
+    global $dbc;
+
+    $query = 'UPDATE customer SET 
+                password = :password
+              WHERE cust_id = :cust_id';
+
+    $statement = $dbc->prepare($query);
+    $statement->bindValue(':password', $password);
+    $statement->bindValue(':cust_id', $cust_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+/**
+ * This function takes in a first and last name
+ * and stores it in the database
+ *
+ * @param string $firstname - the firstName the user entered in the form.
+ * @param string $lastname - the lastName the user enterd in the form.
+ * @param string $email - the email the user enterd in the form.
+ * @param string $password - the password the user enterd in the form.
+ *
+ * @return void
+ */
+function updateCustomerInfo($first_name, $last_name, $email, $cust_id)
+{
+    global $dbc;
+
+    $query = 'UPDATE customer SET 
+                first_name = :first_name,
+                last_name = :last_name,
+                email = :email
+              WHERE cust_id = :cust_id';
+
+    $statement = $dbc->prepare($query);
+    $statement->bindValue(':first_name', $first_name);
+    $statement->bindValue(':last_name', $last_name);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':cust_id', $cust_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+/**
+ * This function generates the result set of
+ * the products table.
+ *
+ * @return array $products - an assoc. array which contains all the products stored in the DB.
+ */
+function getUserInfo($cust_id) {
+    global $dbc;
+
+    $query = 'SELECT first_name, last_name, email, password FROM customer WHERE cust_id = :cust_id';
+    $statement = $dbc->prepare($query);
+    $statement->bindValue(':cust_id', $cust_id);
+    $statement->execute();
+    $user = $statement->fetch();
+    $statement->closeCursor();
+    return $user;
+}
+
+/**
+ * This function takes in a first and last name
+ * and stores it in the database
+ *
+ * @param string $firstname - the firstName the user entered in the form.
+ * @param string $lastname - the lastName the user enterd in the form.
+ * @param string $email - the email the user enterd in the form.
+ * @param string $password - the password the user enterd in the form.
+ *
+ * @return void
+ */
 function storeOrderProduct($order_id,$prod_id,$qty)
 {
     global $dbc;
