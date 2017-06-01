@@ -84,7 +84,7 @@
 		        </form>
             <ul class="nav navbar-nav navbar-right">
 <?php if(isset($_SESSION['custid']) && isset($_SESSION['custname'])) {?>
-                <li><a href="#"><span class="glyphicon"></span> Hello, <?php echo $_SESSION['custname'];  ?></a></li>
+                <li><a href="/userAccount.php"><span class="glyphicon"></span> Hello, <?php echo $_SESSION['custname'];  ?></a></li>
 <?php } ?>
                 <li><a href="/shoppingcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <?php (count($_SESSION['prod_id']) > 0) ? print '(' . count($_SESSION['prod_id']) . ')': ""; ?> </a></li>
             </ul>
