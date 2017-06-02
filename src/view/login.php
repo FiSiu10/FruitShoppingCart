@@ -9,15 +9,16 @@
         <div class="col-md-4">
             <form action="/login_post.php" method="post">
                 <h2>Login</h2><br>
-                <div class="form-group">
+                <div class="form-group"><h4>
                     <label for="email">Email address:</label>
 					<input type="email" name="email" required id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address">	                                        
-                </div>
-                <div class="form-group">
+                    </h4></div>
+                <div class="form-group"><h4>
                     <label for="pwd">Password:</label>
-                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Password">                    
+                    <input type="password" name="password" class="form-control" id="pwd" placeholder="Password">
+                    </h4>
                 </div><br>
-                <button type="submit" class="btn btn-default">Login</button>
+                <button type="submit" class="btn btn-primary pull-right">Login</button>
             </form>
         </div>
         <div class="col-md-4"></div>
@@ -35,8 +36,8 @@
     </div>
     <hr class="style1">
     <div class="text-center">
-        <p>New to Exotic Fruits Website?</p>
-        <a href="/view/signup.php" class="btn btn-info btn-lg" role="button">Create your account</a>
+        <p>New to our website?</p>
+        <a href="/view/signup.php" class="btn btn-primary btn-lg" role="button">Create your account</a>
     </div>
 </div>
 <br><br>
