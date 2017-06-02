@@ -2,18 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exotic Fruits - All Products</title>
+    <title>The Exotic Fruit Company</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">			<!-- Added by Roy for Search Bar -->
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         /* Remove the navbar's default rounded borders and increase the bottom margin */
+
         .navbar {
             margin-bottom: 50px;
-            border-radius: 0;
+            border-radius: 0px;
+            color: #000000;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
         }
 
         /* Remove the jumbotron's default bottom margin */
@@ -51,7 +57,7 @@
 <body>
 <div class="jumbotron">
     <div class="container text-center">
-        <h1><img src = "/view/images/1.png" width="350" height="193"></h1>
+        <a href="index.php"><h1><img src = "/view/images/1.png" width="350" height="193"></h1></a>
     </div>
 </div>
 <nav class="navbar navbar-inverse">

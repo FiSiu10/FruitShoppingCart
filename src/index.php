@@ -9,11 +9,38 @@ require_once 'model/db_functions.php';
         text-align: center;
     }
 
+    .panel-default > .panel-heading{
+        background-color: #222222;
+        text-align: center;
+
+        font-size: 28px;
+        color: #ffffff;
+    }
+    .panel-default{
+
+        text-align: center;
+        font-size: 20px;
+        color: #0f192a;
+        border-color: darkgray;
+
+    }
+
+    .panel-default > .panel-footer{
+        background-color: #222222;
+        color: #ffffff;
+    }
+
+    h1, h3 {
+        font-family: 'Francois One', sans-serif;
+    }
+
+
 </style>
 
 <div class="welcome">
-    <h1>Welcome! <br></h1>
-        <h4>View our all our inventory below</h4>
+    <h1>$10.00 Flat Shipping Rate</h1>
+    <h3>View Our Full Inventory Below<br></h3>
+    <h1></h1>
 </div>
 
 
@@ -30,7 +57,7 @@ require_once 'model/db_functions.php';
     <input type="submit" value="Sort"/>
   </form>
 </div>
-
+<br>
 <?php
   if (!empty($_GET['sort']) && $_GET['sort'] == 'prod_id'){
     $orderby_query = 'ORDER BY prod_id';
@@ -59,10 +86,10 @@ require_once 'model/db_functions.php';
 		}
     echo "<div class='col-sm-4'>
 		<a href='allFruitInfo.php?prod_id=" . $prod['prod_id'] . "'>
-        <div class='panel panel-success'>
+        <div class='panel panel-default'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
-            <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive' style='width:300px;height:200px' alt='Image'></div>
-            <div class='panel-footer'>" . "$" . $prod['unit_price'] . "</div>
+            <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive center-block' style='width:300px;height:200px' alt='Image'></div>
+            <div class='panel-footer'>" . "Price $" . $prod['unit_price'] . "</div>
         </div>
     </div></a>";
 		if($end == $i) {
