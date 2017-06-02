@@ -39,7 +39,7 @@ for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {
     echo "
                 <tbody>
                 <tr><td>
-                        <h5><b>" . $prod[$m]['prod_name'] . "</b></h5>
+                        <h4><b>" . $prod[$m]['prod_name'] . "</b></h4>
                     </td>
                     <td>
                         <form action='updateCart.php' method='POST' name='update'>
@@ -70,38 +70,39 @@ echo "
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td><h5>Subtotal</h5></td>
-                    <td><h5>" . '$ ' . number_format($subtotal, 2) . "</h5></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><h5>Shipping</h5></td>
-                    <td><h5>$ 10.00</h5></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><h5>Grand Total</h5></td>
-                    <td><h5>" . '$ ' . number_format($grandTotal, 2) . "</h5></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td></td> 
                     <td></td>
                     <td><h5><button type='button' class='empty btn btn-danger btn-sm'>
                             <span class='glyphicon glyphicon-remove'></span>  Empty Cart</button></h5></td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><h4>Subtotal</h4></td>
+                    <td><h4>" . '$ ' . number_format($subtotal, 2) . "</h4></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><h4>Shipping</h4></td>
+                    <td><h4>$ 10.00</h4></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><h4>Grand Total</h4></td>
+                    <td><h4>" . '$ ' . number_format($grandTotal, 2) . "</h4></td>
+                </tr>
+                
+                <tr>
                     <td>
-                        <a href='/index.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='/index.php'><button type='button' class='btn btn-primary btn-md'>
                                 <span class='glyphicon glyphicon-chevron-left'></span>  Continue Shopping</button></a>
                     </td>
                     <td></td>
@@ -109,7 +110,7 @@ echo "
                     <td></td>
                     <td></td>
                     <td>
-                        <a href='shipping.php'><button type='button' class='btn btn-default btn-md'>
+                        <a href='shipping.php'><button type='button' class='btn btn-primary btn-md'>
                                 Purchase <span class='glyphicon glyphicon-chevron-right'></span></button></a>
                     </td>
                 </tr>
