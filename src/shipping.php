@@ -9,7 +9,7 @@
     
     // Get result of filter_input() and check for missing or invalid data
     if (!isset($custid)) {
-        $error_message = 'Not logged in.';
+        $error_message = 'PLEASE LOGIN BEFORE PROCEEDING';
 	} elseif ($custid === false) {		
         $error_message = 'Invalid login.';
     } else {
@@ -19,12 +19,12 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo "<p><h3 style='color:red;margin-left:50px;'>$error_message </h3></p>"; 
-		echo '<p><h3 style="margin-left:50px;"><a href="view/login.php">Please login to proceed.</a></h3></p>';
+        echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
         exit();
     }
 	
 ?>
+
 
 <div class="container">
     <div class="row">
