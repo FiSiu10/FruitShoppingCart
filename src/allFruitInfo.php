@@ -26,6 +26,38 @@ $productStock = $prod['stock_amount'];
     .price{
         color: red;
     }
+	
+	/* Desktops and laptops ----------- */
+@media only screen  and (min-width: 950px) and (max-width : 1224px) {
+	.product {
+		margin-right: 110px;
+	}
+	.description {
+		margin-left: 10px;
+	}
+}
+
+	/* Laptops ----------- */
+@media only screen  and  (min-width: 800px) and (max-width : 949px) {
+	.product {
+		margin-right: 110px;
+	}
+	.description {
+		margin-left: 10px;
+		width: 200px;
+	}
+}
+
+	/* Laptops and tablets ----------- */
+@media only screen  and  (max-width : 799px) {
+	.product {
+		margin-right: 110px;
+	}
+	.description {
+		margin-left: 10px;
+		width: 180px;
+	}
+}
 
 </style>
 <div class="container">
@@ -34,11 +66,11 @@ $productStock = $prod['stock_amount'];
       echo
        "<div class='row'>
             <div class='col-sm-4 product'><img src='" . $prod['photo'] . "' width='350px' height='250px'></div>
-            <div class='col-sm-6'><h1>" . $prod['prod_name'] . "</h1></div>
+            <div class='col-sm-6 description'><h1>" . $prod['prod_name'] . "</h1></div>
             <div class='col-sm-6'></div>
             <div class='col-sm-6'><hr></div>
             <div class='col-sm-6'></div>
-            <div class='col-sm-6'><h4>" . $prod['prod_desc'] ."</h4></div>
+            <div class='col-sm-6 description'><h4>" . $prod['prod_desc'] ."</h4></div>
         </div>
         "
     ?>
