@@ -54,8 +54,7 @@
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
-        echo "<p><h3 style='color:red;margin-left:50px;'>$error_message </h3></p>"; 
-		echo '<p><h3 style="margin-left:50px;"><a href="shipping.php">Please go back to the shipping form.</a></h3></p>';
+        echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
         exit();
     }
 	
@@ -87,6 +86,9 @@
     .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
     .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
     /*END Form Wizard*/
+    .button{
+        margin-left: 150px;
+    }
 </style>
 
 <div class="container">
@@ -178,7 +180,7 @@
 				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
 				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
 				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-                <button type="submit" class="btn btn-primary pull-right">Continue to Address Info Review</button>
+                <button type="submit" class="btn btn-primary button">Continue to Address Info Review</button>
             </form>
         </div>
         <div class="col-md-4"></div>

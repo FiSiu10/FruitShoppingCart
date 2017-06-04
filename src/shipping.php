@@ -18,12 +18,12 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-/*
+
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
         exit();
     }
-*/
+
 
 ?>
 
