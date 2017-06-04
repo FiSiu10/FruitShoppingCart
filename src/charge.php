@@ -100,15 +100,20 @@ $name = $shipFirstName . ' ' . $shipLastName;
 $amount = number_format(($amount / 100), 2);
 //echo "<h1>Successfully charged $amount!</h1>";
 ?>
-
+<style>
+    .enter{
+        text-align: right;
+        margin-right: 150px;
+    }
+</style>
 
 <div class="container">
     <div class="row">
         <h2>Order Review</h2><br>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-success">
+        <div class="col-md-4">
+            <div class="panel panel-default">
                 <div class="panel-heading">Shipping Details</div>
                 <div class="panel-body">
                     <?php print $name ?><br>
@@ -116,7 +121,9 @@ $amount = number_format(($amount / 100), 2);
                     <?php print $shipProviceCountry ?><br>
                     <?php print $shipPostal ?><br></div>
             </div>
-            <div class="panel panel-success">
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
                 <div class="panel-heading">Billing Details</div>
                 <div class="panel-body">
                     <?php print $name ?><br>
@@ -124,47 +131,52 @@ $amount = number_format(($amount / 100), 2);
                     <?php print $billProvinceCountry  ?><br>
                     <?php print $billPostal ?><br></div>
             </div>
-            <div class="panel panel-success">
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
                 <div class="panel-heading">Payment Information</div>
                 <div class="panel-body">Successfully charged $<?php print $amount ?>!</div>
                 <?php sendConfirmationEmail($email, $name, $shipAddress, $shipCity, $shipProvince, $shipPostal)?>
             </div>
-            <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="text-center"><strong>Order Summary</strong></h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                                <table class="table table-condensed">
-                                    <thead>
-                                    <tr>
-                                        <td><strong>Item Name</strong></td>
-                                        <td class="text-center"><strong>Item Price</strong></td>
-                                        <td class="text-center"><strong>Item Quantity</strong></td>
-                                        <td class="text-right"><strong>Total</strong></td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                    $prod = array();
-                                    for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
-                                        $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
-                                        for ($j = 0; $j < count($productInfo); $j++) {
-                                            $prod[$i] = $productInfo[$j];
-                                        }
-                                        $total[$i] = (int) $_SESSION['itemQty'][$i] * $prod[$i]['unit_price'];
-                                        $subtotal += $total[$i];
-                                        $grandTotal = $subtotal + 10;
-                                    }
-                                    for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {echo "
+        </div>
+    </div>
+    <div class="row enter">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center"><strong>Order Summary</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <td><strong>Item Name</strong></td>
+                            <td class="text-center"><strong>Item Price</strong></td>
+                            <td class="text-center"><strong>Item Quantity</strong></td>
+                            <td class="text-right"><strong>Total</strong></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $prod = array();
+                        for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
+                            $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
+                            for ($j = 0; $j < count($productInfo); $j++) {
+                                $prod[$i] = $productInfo[$j];
+                            }
+                            $total[$i] = (int) $_SESSION['itemQty'][$i] * $prod[$i]['unit_price'];
+                            $subtotal += $total[$i];
+                            $grandTotal = $subtotal + 10;
+                        }
+                        for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {echo "
                                     <tr>
                                         <td>" . $prod[$m]['prod_name'] . "</td>
                                         <td class='text-center'>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</td>
                                         <td class='text-center'>" . $_SESSION['itemQty'][$m] . "</td>
                                         <td class='text-right'>" . '$' . number_format($total[$m], 2) . "</td>
                                     </tr>";}?>
-                                    <?php
-                                    echo "<tr>
+                        <?php
+                        echo "<tr>
                                         <td class='highrow'></td>
                                         <td class='highrow'></td>
                                         <td class='highrow text-center'><strong>Subtotal</strong></td>
@@ -183,15 +195,14 @@ $amount = number_format(($amount / 100), 2);
                                         <td class='emptyrow text-right'>" . '$' . number_format($grandTotal, 2) . "</td>
                                     </tr>
                                     ";?>
-                                    </tbody>
-                                </table>
-                        </div>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
-                <button type="submit" class="btn btn-default" onclick="javascript:document.frm.submit();">Make Purchase</button>
+            </div>
         </div>
-
-    </div><br>
+        <button type="submit" class="btn btn-default" onclick="javascript:document.frm.submit();">Make Purchase</button>
+    </div>
+    <br>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">

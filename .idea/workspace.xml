@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93f8480a-3859-4f70-95f3-48f9fa9f060c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/charge.php" afterPath="$PROJECT_DIR$/src/charge.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/summary.php" afterPath="$PROJECT_DIR$/src/summary.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,18 +15,18 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="summary.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="summary.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/summary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="195" column="30" lean-forward="false" selection-start-line="195" selection-start-column="30" selection-end-line="195" selection-end-column="30" />
+            <state relative-caret-position="488">
+              <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
               <folding>
                 <element signature="e#1776#3957#0#PHP" expanded="false" />
                 <element signature="e#1852#1936#0#PHP" expanded="false" />
                 <element signature="e#1937#2022#0#PHP" expanded="false" />
                 <element signature="e#2097#2178#0#PHP" expanded="false" />
-                <marker date="1496541167000" expanded="true" signature="4096:4123" ph="..." />
-                <marker date="1496541167000" expanded="true" signature="4175:4192" ph="..." />
+                <marker date="1496541763000" expanded="true" signature="4093:4120" ph="..." />
+                <marker date="1496541763000" expanded="true" signature="4172:4189" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,6 +43,24 @@
                 <marker date="1496539152000" expanded="true" signature="2881:2929" ph="..." />
                 <marker date="1496539152000" expanded="true" signature="2881:2934" ph="..." />
                 <marker date="1496539152000" expanded="true" signature="2881:2940" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="charge.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/charge.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="142" column="7" lean-forward="false" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#form#0;n#!!top" expanded="false" />
+                <marker date="1496541734000" expanded="true" signature="7366:7827" ph="..." />
+                <marker date="1496541734000" expanded="true" signature="7897:8292" ph="..." />
+                <marker date="1496541734000" expanded="true" signature="8333:8697" ph="..." />
+                <marker date="1496541734000" expanded="true" signature="8738:9173" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,7 +84,6 @@
         <option value="$PROJECT_DIR$/src/view/emailConfirm.php" />
         <option value="$PROJECT_DIR$/src/addToCart.php" />
         <option value="$PROJECT_DIR$/src/confirmationEmail.php" />
-        <option value="$PROJECT_DIR$/src/charge.php" />
         <option value="$PROJECT_DIR$/src/view/emailConfirm.html" />
         <option value="$PROJECT_DIR$/src/allFruitInfo.php" />
         <option value="$PROJECT_DIR$/src/shipping.php" />
@@ -73,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/view/login.php" />
         <option value="$PROJECT_DIR$/src/index.php" />
         <option value="$PROJECT_DIR$/src/view/header.php" />
+        <option value="$PROJECT_DIR$/src/charge.php" />
         <option value="$PROJECT_DIR$/src/summary.php" />
       </list>
     </option>
@@ -228,7 +247,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59968000" />
+    <option name="totallyTimeSpent" value="60561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1424" height="873" extended-state="0" />
@@ -419,14 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/charge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="187" column="30" lean-forward="false" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/confirmationEmail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -499,15 +510,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/summary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="195" column="30" lean-forward="false" selection-start-line="195" selection-start-column="30" selection-end-line="195" selection-end-column="30" />
+        <state relative-caret-position="488">
+          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
           <folding>
             <element signature="e#1776#3957#0#PHP" expanded="false" />
             <element signature="e#1852#1936#0#PHP" expanded="false" />
             <element signature="e#1937#2022#0#PHP" expanded="false" />
             <element signature="e#2097#2178#0#PHP" expanded="false" />
-            <marker date="1496541167000" expanded="true" signature="4096:4123" ph="..." />
-            <marker date="1496541167000" expanded="true" signature="4175:4192" ph="..." />
+            <marker date="1496541763000" expanded="true" signature="4093:4120" ph="..." />
+            <marker date="1496541763000" expanded="true" signature="4172:4189" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/charge.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="142" column="7" lean-forward="false" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#form#0;n#!!top" expanded="false" />
+            <marker date="1496541734000" expanded="true" signature="7366:7827" ph="..." />
+            <marker date="1496541734000" expanded="true" signature="7897:8292" ph="..." />
+            <marker date="1496541734000" expanded="true" signature="8333:8697" ph="..." />
+            <marker date="1496541734000" expanded="true" signature="8738:9173" ph="..." />
           </folding>
         </state>
       </provider>
