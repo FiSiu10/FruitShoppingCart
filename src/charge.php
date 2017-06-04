@@ -84,7 +84,7 @@ $mail = new PHPMailer;
 /* Send Confirmation Email here.
 See https://github.com/PHPMailer/PHPMailer/blob/master/examples/gmail.phps
 as example using Gmail as Mail Server with PHPMailer
-
+*/
 $customer = \Stripe\Customer::create(array(
 'email' => $email,
 'source' => $token
@@ -94,7 +94,7 @@ $charge = \Stripe\Charge::create(array(
 'amount' => $amount,
 'currency' => 'cad'
 ));
-*/
+
 $name = $shipFirstName . ' ' . $shipLastName;
 
 $amount = number_format(($amount / 100), 2);
