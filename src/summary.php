@@ -189,17 +189,6 @@
          </form>
      </div>
     <br>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" area-valuemax="100" style="width:80%">
-                    Order Summary
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
 </div><br><br>
 
 </body>

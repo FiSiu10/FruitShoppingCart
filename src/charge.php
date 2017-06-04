@@ -105,12 +105,67 @@ $amount = number_format(($amount / 100), 2);
         text-align: right;
         margin-right: 150px;
     }
+    .bs-wizard {margin-top: 40px; margin-right: 500px; text-align: right;}
+
+    /*Form Wizard*/
+    .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0; width: 100%;}
+    .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+    .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+    .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 13px; margin-bottom: 5px; font-weight: bold;}
+    .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 10px;}
+    .bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #b6ddc2; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+    .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #97aa40; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
+    .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+    .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #b6ddc2;}
+    .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+    .bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+    .bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+    .bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+    .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+    .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+    .bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+    .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+    .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+    /*END Form Wizard*/
 </style>
 
 <div class="container">
     <div class="row">
-        <h2>Order Review</h2><br>
+        <div class="col-md-4"><h1>Order Review</h1></div>
+        <div class="col-md-4">
+            <div class="row bs-wizard" style="border-bottom:0;">
+                <div class="col-xs-3 bs-wizard-step complete">
+                    <div class="text-center bs-wizard-stepnum">Login</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a href="#" class="bs-wizard-dot"></a>
+                    <div class="bs-wizard-info text-center"></div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+                    <div class="text-center bs-wizard-stepnum">Shipping/Billing</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a href="#" class="bs-wizard-dot"></a>
+                    <div class="bs-wizard-info text-center"></div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+                    <div class="text-center bs-wizard-stepnum">Payment</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a href="#" class="bs-wizard-dot"></a>
+                    <div class="bs-wizard-info text-center"></div>
+                </div>
+
+                <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                    <div class="text-center bs-wizard-stepnum">Purchase</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a href="#" class="bs-wizard-dot"></a>
+                    <div class="bs-wizard-info text-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
     </div>
+    <br><br>
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-default">
@@ -140,80 +195,71 @@ $amount = number_format(($amount / 100), 2);
             </div>
         </div>
     </div>
-    <div class="row enter">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="text-center"><strong>Order Summary</strong></h3>
-            </div>
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-condensed">
-                        <thead>
-                        <tr>
-                            <td><strong>Item Name</strong></td>
-                            <td class="text-center"><strong>Item Price</strong></td>
-                            <td class="text-center"><strong>Item Quantity</strong></td>
-                            <td class="text-right"><strong>Total</strong></td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        $prod = array();
-                        for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
-                            $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
-                            for ($j = 0; $j < count($productInfo); $j++) {
-                                $prod[$i] = $productInfo[$j];
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-center"><strong>Order Summary</strong></h3>
+                </div>
+                <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <td><strong>Item Name</strong></td>
+                                <td><strong>Item Price</strong></td>
+                                <td><strong>Item Quantity</strong></td>
+                                <td><strong>Total</strong></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $prod = array();
+                            for ($i = 0; $i < count($_SESSION['itemQty']); $i++) {
+                                $productInfo = getCartInfo($_SESSION['prod_id'][$i]);
+                                for ($j = 0; $j < count($productInfo); $j++) {
+                                    $prod[$i] = $productInfo[$j];
+                                }
+                                $total[$i] = (int) $_SESSION['itemQty'][$i] * $prod[$i]['unit_price'];
+                                $subtotal += $total[$i];
+                                $grandTotal = $subtotal + 10;
                             }
-                            $total[$i] = (int) $_SESSION['itemQty'][$i] * $prod[$i]['unit_price'];
-                            $subtotal += $total[$i];
-                            $grandTotal = $subtotal + 10;
-                        }
-                        for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {echo "
-                                    <tr>
-                                        <td>" . $prod[$m]['prod_name'] . "</td>
-                                        <td class='text-center'>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</td>
-                                        <td class='text-center'>" . $_SESSION['itemQty'][$m] . "</td>
-                                        <td class='text-right'>" . '$' . number_format($total[$m], 2) . "</td>
-                                    </tr>";}?>
-                        <?php
-                        echo "<tr>
-                                        <td class='highrow'></td>
-                                        <td class='highrow'></td>
-                                        <td class='highrow text-center'><strong>Subtotal</strong></td>
-                                        <td class='highrow text-right'>" . '$' . number_format($subtotal, 2) . "</td>
-                                    </tr>
-                                    <tr>
-                                        <td class='emptyrow'></td>
-                                        <td class='emptyrow'></td>
-                                        <td class='emptyrow text-center'><strong>Shipping</strong></td>
-                                        <td class='emptyrow text-right'>$10.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class='emptyrow'><i class='fa fa-barcode iconbig'></i></td>
-                                        <td class='emptyrow'></td>
-                                        <td class='emptyrow text-center'><strong>Total</strong></td>
-                                        <td class='emptyrow text-right'>" . '$' . number_format($grandTotal, 2) . "</td>
-                                    </tr>
-                                    ";?>
-                        </tbody>
-                    </table>
+                            for ($m = 0; $m < count($_SESSION['itemQty']); $m++) {echo "
+                                        <tr>
+                                            <td>" . $prod[$m]['prod_name'] . "</td>
+                                            <td>" . '$ ' . number_format($prod[$m]['unit_price'], 2) . "</td>
+                                            <td>" . $_SESSION['itemQty'][$m] . "</td>
+                                            <td>" . '$' . number_format($total[$m], 2) . "</td>
+                                        </tr>";}?>
+                            <?php
+                            echo "<tr>
+                                            <td class='highrow'></td>
+                                            <td class='highrow'></td>
+                                            <td class='highrow'><strong>Subtotal</strong></td>
+                                            <td class='highrow'>" . '$' . number_format($subtotal, 2) . "</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='emptyrow'></td>
+                                            <td class='emptyrow'></td>
+                                            <td class='emptyrow'><strong>Shipping</strong></td>
+                                            <td class='emptyrow'>$10.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class='emptyrow'><i class='fa fa-barcode iconbig'></i></td>
+                                            <td class='emptyrow'></td>
+                                            <td class='emptyrow'><strong>Total</strong></td>
+                                            <td class='emptyrow'>" . '$' . number_format($grandTotal, 2) . "</td>
+                                        </tr>
+                                        ";?>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-default" onclick="javascript:document.frm.submit();">Make Purchase</button>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-primary pull-right" onclick="javascript:document.frm.submit();">Make Purchase</button>
     </div>
     <br>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" area-valuemax="100" style="width:80%">
-                    Order Summary
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
 </div><br><br>
 
 <form method="post" name="frm" action="purchase_post.php">
