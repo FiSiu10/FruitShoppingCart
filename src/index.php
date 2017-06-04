@@ -42,7 +42,6 @@ require_once 'model/db_functions.php';
     .sort{
         text-align: right;
         margin-right: 150px;
-        font-weight: bold;
         font-size: 18px;
     }
 
