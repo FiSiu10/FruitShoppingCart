@@ -18,10 +18,12 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
+
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
         exit();
     }
+
 
 ?>
 
@@ -48,6 +50,10 @@
     .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
     .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
     /*END Form Wizard*/
+
+    .button{
+        margin-left: 150px;
+    }
 </style>
 
 <div class="container">
@@ -102,7 +108,7 @@
                     <input required pattern="^[A-Z][a-z]+$" title="Must start with a capital letter followed by one or more small letters" type="text" class="form-control" id="lastname" name="shipLastName" placeholder="Last Name">
                 </div>
                 <div class="form-group">
-                    <label for="address">Street Address:</label>
+                    <label for="address">Street Address</label>
 					<!-- do some client-side validation of form data -->
                     <input required pattern="\W*\d+\W*\d* [0-9a-zA-Z. ]+" title="Use symbls, numbers, or letters" type="text" class="form-control" id="address" name="shipAddress" placeholder="Address">
                 </div>
@@ -135,15 +141,15 @@
                     <input required pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="shipPostal" placeholder="Postal Code">
                 </div>
                 <div class="form-group">
-                    <label>Country:</label><br>
+                    <label>Country</label><br>
                     <select name="shipCountry">
                         <option value="CA">Canada</option>
                     </select>
                 </div>
-				<input type="checkbox" name="same" value="same"> Use shipping address for billing.
+				<input type="checkbox" name="same" value="same">  Billing address is the same
 				<br><br>
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary button">Submit</button>
             </form>
         </div>
         <div class="col-md-4"></div>
