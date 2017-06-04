@@ -16,47 +16,49 @@
     
     // Get result of filter_input() and check for missing or invalid data
     if (!isset($shipAddress)) {
-        $error_message = 'Missing address.';
+        $error_message = 'Missing address. Click to go back.';
 	} elseif (!isset($shipFirstName)) {
-        $error_message = 'Missing first name.';
+        $error_message = 'Missing first name. Click to go back.';
 	} elseif (!isset($shipLastName)) {
-        $error_message = 'Missing last name.';
+        $error_message = 'Missing last name. Click to go back.';
     } elseif (!isset($shipCity)) {
-        $error_message = 'Missing city.';
+        $error_message = 'Missing city. Click to go back.';
 	} elseif (!isset($shipProvince)) {
-        $error_message = 'Missing province.';
+        $error_message = 'Missing province. Click to go back.';
 	} elseif (!isset($shipPostal)) {
-        $error_message = 'Missing postal code.';		
+        $error_message = 'Missing postal code. Click to go back.';
 	} elseif (!isset($shipCountry)) {
-        $error_message = 'Missing country.';
+        $error_message = 'Missing country. Click to go back.';
 	} elseif (!isset($custid)) {
-        $error_message = 'Not logged in.';
+        $error_message = 'Not logged in. Click to go back.';
     } elseif ($shipAddress === false) {
-        $error_message = 'Invalid address.';
+        $error_message = 'Invalid address. Click to go back.';
     } elseif ($shipFirstName === false) {
-        $error_message = 'Invalid first name.';
+        $error_message = 'Invalid first name. Click to go back.';
     } elseif ($shipLastName === false) {
-        $error_message = 'Invalid last name.';
+        $error_message = 'Invalid last name. Click to go back.';
     } elseif ($shipCity === false) {
-        $error_message = 'Invalid city.';
+        $error_message = 'Invalid city. Click to go back.';
 	} elseif ($shipProvince === false) {
-        $error_message = 'Invalid province.';
+        $error_message = 'Invalid province. Click to go back.';
 	} elseif ($shipPostal === false) {
-        $error_message = 'Invalid postal code.';
+        $error_message = 'Invalid postal code. Click to go back.';
 	} elseif ($shipCountry === false) {		
-        $error_message = 'Invalid country.';
+        $error_message = 'Invalid country. Click to go back.';
 	} elseif ($custid === false) {		
-        $error_message = 'Invalid login.';
+        $error_message = 'Invalid login. Click to go back.';
     } else {
         $error_message = '';
     }
 
     // Check if there is an error. Print it and then stop
     // the Script.
+
     if (!empty($error_message)) {
-        echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
+        echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"shipping.php\">$error_message </a></h1></p>";
         exit();
     }
+
 	
 	//if checkbox is selected, set values of the form to the data sent from shipping.
 	$same = $_POST['same'];
@@ -86,8 +88,8 @@
     .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
     .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
     /*END Form Wizard*/
-    .button{
-        margin-left: 150px;
+    .click{
+        margin-left: 70px;
     }
 </style>
 
@@ -180,7 +182,7 @@
 				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
 				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
 				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-                <button type="submit" class="btn btn-primary button">Continue to Address Info Review</button>
+                <button type="submit" class="btn btn-primary click">Continue to Address Info Review</button>
             </form>
         </div>
         <div class="col-md-4"></div>
