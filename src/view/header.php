@@ -19,7 +19,7 @@
             border-radius: 0px;
             color: #000000;
             font-family: 'Oswald', sans-serif;
-            font-size: 22px;
+            font-size: 20px;
         }
 
         /* Remove the jumbotron's default bottom margin */

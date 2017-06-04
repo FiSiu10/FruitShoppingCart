@@ -10,28 +10,40 @@ require_once 'model/db_functions.php';
     }
 
     .panel-default > .panel-heading{
-        background-color: #222222;
-        text-align: center;
-
-        font-size: 28px;
-        color: #ffffff;
-    }
-    .panel-default{
-
+        background-color: lightgrey;
         text-align: center;
         font-size: 20px;
-        color: #0f192a;
+        color: #222222;
+    }
+    .panel-default{
+        font-family: Verdana, sans-serif;
+        text-align: center;
+        font-size: 18px;
+        color: lightgray;
         border-color: darkgray;
+        font-weight: bold;
 
     }
 
     .panel-default > .panel-footer{
-        background-color: #222222;
-        color: #ffffff;
+        background-color: lightgrey;
+        color: #b12704;
     }
 
     h1, h3 {
         font-family: 'Francois One', sans-serif;
+    }
+
+    .price{
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    .sort{
+        text-align: right;
+        margin-right: 150px;
+        font-weight: bold;
+        font-size: 18px;
     }
 
 
@@ -42,9 +54,9 @@ require_once 'model/db_functions.php';
     <h3>View Our Full Inventory Below<br></h3>
     <h1></h1>
 </div>
+<br><br><br>
 
-
-<div style="margin-left:150px">
+<div class="sort" style="margin-left:150px">
 	<form name="sort" method="get"> Sort by:
   	<select name="sort" onclick="this.form.submit">
       <option value="">--Select--</option>
@@ -89,7 +101,7 @@ require_once 'model/db_functions.php';
         <div class='panel panel-default'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
             <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive center-block' style='width:300px;height:200px' alt='Image'></div>
-            <div class='panel-footer'>" . "Price $" . $prod['unit_price'] . "</div>
+            <div class='panel-footer price'>" . "CAD $" . $prod['unit_price'] . "</div>
         </div>
     </div></a>";
 		if($end == $i) {

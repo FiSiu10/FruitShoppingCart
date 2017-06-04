@@ -91,6 +91,7 @@
         $error_message = '';
     }
 
+
     // Check if there is an error. Print it and then stop
     // the Script.
     if (!empty($error_message)) {
@@ -101,15 +102,25 @@
 
    
  ?>
+
+<style>
+    .enter{
+        text-align: right;
+        margin-right: 150px;
+    }
+
+    .info{
+        margin-left: 175px;
+    }
+</style>
  <div class="container">
     <div class="row">
         <h2>Order Review</h2><br>
     </div>
-    <div class="row">
-
-        <div class="col-md-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">Shipping Address</div>
+    <div class="row info">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Shipping Address</h4></div>
                 <div class="panel-body">
 				<!-- Note: Don't need htmlspecialchars() function here since these vars were already sanitized above -->
 					<h5 class="name">First Name: <?php echo $shipFirstName; ?></h5>
@@ -120,61 +131,64 @@
 					<h5 class="name">Postal Code: <?php echo $shipPostal; ?></h5>
 					<h5 class="name">Country: <?php echo $shipCountry; ?></h5>
 					<br>
-			<form action="shipping.php" method="post">
-				<h5>If incorrect, please edit shipping address:</h5>
-				<button type="submit" class="btn btn-default">EDIT</button>
-			</form>
+                    <form action="shipping.php" method="post">
+                        <h5>If incorrect, please edit shipping address:</h5>
+                        <button type="submit" class="btn btn-default">EDIT</button>
+                    </form>
 				</div>
 			</div>
-            <div class="panel panel-success">
-                <div class="panel-heading">Billing Details</div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Billing Details</h4></div>
                 <div class="panel-body">
 					<h5 class="name">Street Address: <?php echo $billAddress; ?></h5>
 					<h5 class="name">City: <?php echo $billCity; ?></h5>
 					<h5 class="name">Province: <?php echo $billProvince; ?></h5>
 					<h5 class="name">Postal Code: <?php echo $billPostal; ?></h5>
 					<h5 class="name">Country: <?php echo $billCountry; ?></h5>
-					<br>
-			<form action="billing.php" method="post">
-				<h5>If incorrect, please edit billing address:</h5>
-				<button type="submit" class="btn btn-default">EDIT</button>
-			</form>
+					<h5> </h5>
+                    <h5> </h5>
+                    <h5> </h5>
+                    <form action="billing.php" method="post">
+                        <h5>If incorrect, please edit billing address:</h5>
+                        <button type="submit" class="btn btn-default">EDIT</button>
+                    </form>
 				</div>
 			</div>
-            <div class="panel panel-success">
-
-                </div>
-			<form action="charge.php" method="post">
-				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
-				<input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
-				<input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
-				<input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>
-				<input type="hidden" name="shipCity" value="<?php print $shipCity; ?>"/>
-				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
-				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
-				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-				
-				<input type="hidden" name="billFirstName" value="<?php print $billFirstName; ?>"/>
-				<input type="hidden" name="billLastName" value="<?php print $billLastName; ?>"/>
-				<input type="hidden" name="billAddress" value="<?php print $billAddress; ?>"/>
-				<input type="hidden" name="billCity" value="<?php print $billCity; ?>"/>
-				<input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
-				<input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
-				<input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
-				<h4>If the info on this page is correct please submit your order:</h4>
-				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="<?php echo $stripe['publishable_key']; ?>"
-					data-description="Payment Checkout"
-					data-amount="<?php echo $grandTotal * 100; ?>"
-					data-locale="auto"
-					data-currency="cad">
-				</script>
-				<input type="hidden" name="amount" value="<?php echo $grandTotal * 100; ?>" />
-				
-			</form>
         </div>
+    </div>
+     <div class="row enter">
+         <form action="charge.php" method="post">
+             <input type="hidden" name="custid" value="<?php print $custid; ?>"/>
+             <input type="hidden" name="shipFirstName" value="<?php print $shipFirstName; ?>"/>
+             <input type="hidden" name="shipLastName" value="<?php print $shipLastName; ?>"/>
+             <input type="hidden" name="shipAddress" value="<?php print $shipAddress; ?>"/>
+             <input type="hidden" name="shipCity" value="<?php print $shipCity; ?>"/>
+             <input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
+             <input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
+             <input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
 
-    </div><br>
+             <input type="hidden" name="billFirstName" value="<?php print $billFirstName; ?>"/>
+             <input type="hidden" name="billLastName" value="<?php print $billLastName; ?>"/>
+             <input type="hidden" name="billAddress" value="<?php print $billAddress; ?>"/>
+             <input type="hidden" name="billCity" value="<?php print $billCity; ?>"/>
+             <input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
+             <input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
+             <input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
+
+             <h4>If the info on this page is correct please submit your order:</h4>
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                     data-key="<?php echo $stripe['publishable_key']; ?>"
+                     data-description="Payment Checkout"
+                     data-amount="<?php echo $grandTotal * 100; ?>"
+                     data-locale="auto"
+                     data-currency="cad">
+             </script>
+             <input type="hidden" name="amount" value="<?php echo $grandTotal * 100; ?>" />
+         </form>
+     </div>
+    <br>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
