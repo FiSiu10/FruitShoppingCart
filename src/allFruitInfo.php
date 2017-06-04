@@ -24,7 +24,8 @@ $productStock = $prod['stock_amount'];
         margin-top: 20px;
     }
     .price{
-        color: red;
+        color: #b12704;
+        font-size: 22px;
     }
 	
 	/* Desktops and laptops ----------- */
@@ -67,17 +68,19 @@ $productStock = $prod['stock_amount'];
        "<div class='row'>
             <div class='col-sm-4 product'><img src='" . $prod['photo'] . "' width='350px' height='250px'></div>
             <div class='col-sm-6 description'><h1>" . $prod['prod_name'] . "</h1></div>
-            <div class='col-sm-6'></div>
             <div class='col-sm-6'><hr></div>
-            <div class='col-sm-6'></div>
             <div class='col-sm-6 description'><h4>" . $prod['prod_desc'] ."</h4></div>
         </div>
         "
     ?>
-
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4 price"><h3><?php echo "Price: $" . " " . $prod['unit_price'] . " " ?></h3></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 price"><?php echo "Price: $" . $prod['unit_price'] . " " ?></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
         <div class="col-sm-4">
             <div class="dropdown">
               <form action="addToCart.php" method="post" >
