@@ -58,7 +58,7 @@
         exit();
     }
 
-	
+
 	//if checkbox is selected, set values of the form to the data sent from shipping.
 	$same = $_POST['same'];
 
