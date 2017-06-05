@@ -85,6 +85,7 @@ $mail = new PHPMailer;
 See https://github.com/PHPMailer/PHPMailer/blob/master/examples/gmail.phps
 as example using Gmail as Mail Server with PHPMailer
 */
+
 $customer = \Stripe\Customer::create(array(
 'email' => $email,
 'source' => $token
@@ -99,6 +100,7 @@ $name = $shipFirstName . ' ' . $shipLastName;
 
 $amount = number_format(($amount / 100), 2);
 //echo "<h1>Successfully charged $amount!</h1>";
+
 ?>
 <style>
     .enter{
@@ -169,7 +171,7 @@ $amount = number_format(($amount / 100), 2);
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Shipping Details</div>
+                <div class="panel-heading"><h4>Shipping Details</h4></div>
                 <div class="panel-body">
                     <?php print $name ?><br>
                     <?php print $shipAddress ?><br>
@@ -179,7 +181,7 @@ $amount = number_format(($amount / 100), 2);
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Billing Details</div>
+                <div class="panel-heading"><h4>Billing Details</h4></div>
                 <div class="panel-body">
                     <?php print $name ?><br>
                     <?php print $billAddress ?><br>
@@ -189,8 +191,10 @@ $amount = number_format(($amount / 100), 2);
         </div>
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Payment Information</div>
+                <div class="panel-heading"><h4>Payment Information</h4></div>
                 <div class="panel-body">Successfully charged $<?php print $amount ?>!</div>
+                <br>
+                <br>
                 <?php sendConfirmationEmail($email, $name, $shipAddress, $shipCity, $shipProvince, $shipPostal)?>
             </div>
         </div>
