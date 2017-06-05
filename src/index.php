@@ -3,8 +3,32 @@ require_once 'view/header.php';
 require_once 'model/db_connect.php';
 require_once 'model/db_functions.php';
 ?>
-
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+<script>
+    $(function(){
+        $(".flip-vertical").flip({
+            axis: 'x',
+            trigger: 'hover'
+        });
+    });
+</script>
 <style>
+    .flip {
+        height: 199px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    .flip img {
+        width: 300px;
+        height: auto;
+    }
+    .flip .back {
+        background: #2184cd;
+        color: #fff;
+        text-align: center;
+    }
+
     .welcome{
         text-align: center;
     }
@@ -45,7 +69,36 @@ require_once 'model/db_functions.php';
         font-size: 18px;
     }
 
-
+    .back .panel-body{
+        height: 230px;
+        width: 360px;
+    }
+    .back .txt{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display: -webkit-box;
+        line-height: 20px;
+        max-height: 194px;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
+        font-weight: normal;
+        text-align: center;
+    }
+    .flip-vertical {
+        height: 327px;
+        width: 360px;
+        margin: 10px 20px 25px 10px;
+        padding: 0px;
+    }
+    .flip-vertical img {
+        width: 300px;
+        height: 200px;
+    }
+    .flip-vertical .back {
+        background-color: #ffffff;
+        color: #000000;
+        text-align: center;
+    }
 </style>
 
 <div class="welcome">
@@ -95,13 +148,21 @@ require_once 'model/db_functions.php';
     <div class="row">
 <?php
 		}
-    echo "<div class='col-sm-4'>
-		<a href='allFruitInfo.php?prod_id=" . $prod['prod_id'] . "'>
-        <div class='panel panel-default'>
+    echo "<a href='allFruitInfo.php?prod_id=" . $prod['prod_id'] . "'>
+          <div class='flip-vertical col-sm-3'>
+		
+        <div class='front panel panel-default'>
             <div class='panel-heading'>" . $prod['prod_name'] . "</div>
             <div class='panel-body'><img src='" . $prod['photo'] . "' class='img-responsive center-block' style='width:300px;height:200px' alt='Image'></div>
             <div class='panel-footer price'>" . "CAD $" . $prod['unit_price'] . "</div>
         </div>
+        
+        <div class='back panel panel-default'>
+            <div class='panel-heading'>" . $prod['prod_name'] . "</div>
+            <div class='panel-body'><div class='txt'>" . $prod['prod_desc'] . "</div></div>
+            <div class='panel-footer price'>" . "CAD $" . $prod['unit_price'] . "</div>
+        </div>        
+        
     </div></a>";
 		if($end == $i) {
 ?>
