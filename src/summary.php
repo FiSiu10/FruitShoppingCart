@@ -226,14 +226,8 @@
              <input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
              <input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
              <input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
-     </div>
-     <div class="row">
-         <div class="pull-right">
+            <span class="pull-right">
              <h4>Add Payment Information</h4>
-         </div>
-     </div>
-     <div class="row">
-         <div class="pull-right">
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                      data-key="<?php echo $stripe['publishable_key']; ?>"
                      data-description="Payment Checkout"
@@ -242,8 +236,8 @@
                      data-currency="cad">
              </script>
              <input type="hidden" name="amount" value="<?php echo $grandTotal * 100; ?>" />
-             </form>
-         </div>
+            </span>
+         </form>
      </div>
     <br>
 </div><br><br>
