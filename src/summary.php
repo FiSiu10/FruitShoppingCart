@@ -94,12 +94,10 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"billing.php\">$error_message </a></h1></p>";
         exit();
     }
-
    
  ?>
 
@@ -107,10 +105,6 @@
     .enter{
         text-align: right;
         margin-right: 150px;
-    }
-
-    .info{
-        margin-left: 175px;
     }
 
     .bs-wizard {margin-top: 40px; margin-right: 500px; text-align: right;}
@@ -203,9 +197,9 @@
 					<h5 class="name">Province: <?php echo $billProvince; ?></h5>
 					<h5 class="name">Postal Code: <?php echo $billPostal; ?></h5>
 					<h5 class="name">Country: <?php echo $billCountry; ?></h5>
-					<h5> </h5>
-                    <h5> </h5>
-                    <h5> </h5>
+					<h5> <br></h5>
+                    <h5> <br></h5>
+                    <h5> <br></h5>
                     <form action="billing.php" method="post">
                         <h5>If incorrect, please edit billing address:</h5>
                         <button type="submit" class="btn btn-default">EDIT</button>
@@ -232,8 +226,14 @@
              <input type="hidden" name="billProvince" value="<?php print $billProvince; ?>"/>
              <input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
              <input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
-
-             <h4>If the info on this page is correct please submit your order:</h4>
+     </div>
+     <div class="row">
+         <div class="pull-right">
+             <h4>Add Payment Information</h4>
+         </div>
+     </div>
+     <div class="row">
+         <div class="pull-right">
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                      data-key="<?php echo $stripe['publishable_key']; ?>"
                      data-description="Payment Checkout"
@@ -242,7 +242,8 @@
                      data-currency="cad">
              </script>
              <input type="hidden" name="amount" value="<?php echo $grandTotal * 100; ?>" />
-         </form>
+             </form>
+         </div>
      </div>
     <br>
 </div><br><br>

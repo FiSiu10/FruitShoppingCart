@@ -16,50 +16,49 @@
     
     // Get result of filter_input() and check for missing or invalid data
     if (!isset($shipAddress)) {
-        $error_message = 'Missing address. Click to go back.';
+        $error_message = 'Missing address. Please fill out shipping information.';
 	} elseif (!isset($shipFirstName)) {
-        $error_message = 'Missing first name. Click to go back.';
+        $error_message = 'Missing first name. Please fill out shipping information.';
 	} elseif (!isset($shipLastName)) {
-        $error_message = 'Missing last name. Click to go back.';
+        $error_message = 'Missing last name. Please fill out shipping information.';
     } elseif (!isset($shipCity)) {
-        $error_message = 'Missing city. Click to go back.';
+        $error_message = 'Missing city. Please fill out shipping information.';
 	} elseif (!isset($shipProvince)) {
-        $error_message = 'Missing province. Click to go back.';
+        $error_message = 'Missing province. Please fill out shipping information.';
 	} elseif (!isset($shipPostal)) {
-        $error_message = 'Missing postal code. Click to go back.';
+        $error_message = 'Missing postal code. Please fill out shipping information.';
 	} elseif (!isset($shipCountry)) {
-        $error_message = 'Missing country. Click to go back.';
+        $error_message = 'Missing country. Please fill out shipping information.';
 	} elseif (!isset($custid)) {
-        $error_message = 'Not logged in. Click to go back.';
+        $error_message = 'Not logged in. Please fill out shipping information.';
     } elseif ($shipAddress === false) {
-        $error_message = 'Invalid address. Click to go back.';
+        $error_message = 'Invalid address. Please fill out shipping information.';
     } elseif ($shipFirstName === false) {
-        $error_message = 'Invalid first name. Click to go back.';
+        $error_message = 'Invalid first name. Please fill out shipping information.';
     } elseif ($shipLastName === false) {
-        $error_message = 'Invalid last name. Click to go back.';
+        $error_message = 'Invalid last name. Please fill out shipping information.';
     } elseif ($shipCity === false) {
-        $error_message = 'Invalid city. Click to go back.';
+        $error_message = 'Invalid city. Please fill out shipping information.';
 	} elseif ($shipProvince === false) {
-        $error_message = 'Invalid province. Click to go back.';
+        $error_message = 'Invalid province. Please fill out shipping information.';
 	} elseif ($shipPostal === false) {
-        $error_message = 'Invalid postal code. Click to go back.';
+        $error_message = 'Invalid postal code. Please fill out shipping information.';
 	} elseif ($shipCountry === false) {		
-        $error_message = 'Invalid country. Click to go back.';
+        $error_message = 'Invalid country. Please fill out shipping information.';
 	} elseif ($custid === false) {		
-        $error_message = 'Invalid login. Click to go back.';
+        $error_message = 'Invalid login. Please fill out shipping information.';
     } else {
         $error_message = '';
     }
 
     // Check if there is an error. Print it and then stop
     // the Script.
-
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"shipping.php\">$error_message </a></h1></p>";
         exit();
     }
 
-	
+
 	//if checkbox is selected, set values of the form to the data sent from shipping.
 	$same = $_POST['same'];
 
@@ -135,7 +134,7 @@
         <div class="col-md-4">
             <form action="summary.php" method="post">
                 <div class="form-group">
-                    <label for="address">Street Address:</label>
+                    <label for="address">Street Address</label>
 					<!-- do some client-side validation of form data -->
                     <input required pattern="\W*\d+\W*\d* [0-9a-zA-Z. ]+" title="Use symbols, numbers or letters" type="text" class="form-control" id="address" name="billAddress" placeholder="Address" value="<?php if ($same) print $shipAddress; ?>"/>
                 </div>
@@ -168,7 +167,7 @@
                     <input required pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" title="Must go letter # letter # letter #" type="text" class="form-control" id="postalcode" name="billPostal" placeholder="Postal Code" value="<?php if ($same) print $shipPostal; ?>"/>
                 </div>
                 <div class="form-group">
-                    <label>Country:</label><br>
+                    <label>Country</label><br>
                     <select name="billCountry">
                         <option value="CA">Canada</option>
                     </select>
@@ -182,7 +181,7 @@
 				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
 				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
 				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-                <button type="submit" class="btn btn-primary click">Continue to Address Info Review</button>
+                <button type="submit" class="btn btn-primary pull-right">Review Address Information</button>
             </form>
         </div>
         <div class="col-md-4"></div>

@@ -12,7 +12,8 @@ $user = getUserInfo($_SESSION['custid']);
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form action="/userAccount_post.php" method="post">
-                <h2>User Account</h2><br>
+                <h2>Update Information</h2>
+                <br>
                 <div class="form-group">
                     <label for="firstname">First Name:</label>
                     <input type="text" name="firstname" pattern="^[A-Z][a-z]+$" pattern="^[A-Z]'?[- a-zA-Z]+$" required class="form-control" id="firstname" placeholder="First Name" value="<?php print $user['first_name']; ?>">
@@ -29,7 +30,7 @@ $user = getUserInfo($_SESSION['custid']);
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" name="password" placeholder="Password" value="">
                 </div><br>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
             </form>
         </div>
         <div class="col-md-4"></div>
