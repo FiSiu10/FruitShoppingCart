@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93f8480a-3859-4f70-95f3-48f9fa9f060c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/billing.php" afterPath="$PROJECT_DIR$/src/billing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/signup.php" afterPath="$PROJECT_DIR$/src/view/signup.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,10 +49,10 @@
       <file leaf-file-name="billing.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/billing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+            <state relative-caret-position="209">
+              <caret line="60" column="2" lean-forward="false" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
               <folding>
-                <marker date="1496701936000" expanded="true" signature="3055:3091" ph="..." />
+                <marker date="1496702016000" expanded="true" signature="3057:3093" ph="..." />
               </folding>
             </state>
           </provider>
@@ -241,12 +239,12 @@
       <workItem from="1496196699048" duration="894000" />
       <workItem from="1496197860359" duration="806000" />
       <workItem from="1496358213919" duration="8091000" />
-      <workItem from="1496700836181" duration="1094000" />
+      <workItem from="1496700836181" duration="1174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72829000" />
+    <option name="totallyTimeSpent" value="72909000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -553,10 +551,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/billing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+        <state relative-caret-position="209">
+          <caret line="60" column="2" lean-forward="false" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
           <folding>
-            <marker date="1496701936000" expanded="true" signature="3055:3091" ph="..." />
+            <marker date="1496702016000" expanded="true" signature="3057:3093" ph="..." />
           </folding>
         </state>
       </provider>

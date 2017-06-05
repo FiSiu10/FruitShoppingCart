@@ -53,12 +53,12 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-
+/*
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"shipping.php\">$error_message </a></h1></p>";
         exit();
     }
-
+*/
 	
 	//if checkbox is selected, set values of the form to the data sent from shipping.
 	$same = $_POST['same'];
@@ -182,7 +182,7 @@
 				<input type="hidden" name="shipProvince" value="<?php print $shipProvince; ?>"/>
 				<input type="hidden" name="shipPostal" value="<?php print $shipPostal; ?>"/>
 				<input type="hidden" name="shipCountry" value="<?php print $shipCountry; ?>"/>
-                <button type="submit" class="btn btn-primary click">Continue to Address Info Review</button>
+                <button type="submit" class="btn btn-primary pull-right">Review Address Information</button>
             </form>
         </div>
         <div class="col-md-4"></div>
