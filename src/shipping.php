@@ -18,12 +18,10 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"view/login.php\">$error_message </a></h1></p>";
         exit();
     }
-
 
 ?>
 
@@ -59,6 +57,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4"><h1>Shipping Address</h1></div>
+        <br>
         <div class="col-md-4">
             <div class="row bs-wizard" style="border-bottom:0;">
                 <div class="col-xs-3 bs-wizard-step complete">
@@ -94,8 +93,8 @@
     </div>
     <br><br>
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
             <form action="billing.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First Name</label>
@@ -149,10 +148,10 @@
 				<input type="checkbox" name="same" value="same">  Billing address is the same
 				<br><br>
 				<input type="hidden" name="custid" value="<?php print $custid; ?>"/>
-                <button type="submit" class="btn btn-primary button">Submit</button>
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
             </form>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-3"></div>
     </div><br>
 </div><br><br>
 

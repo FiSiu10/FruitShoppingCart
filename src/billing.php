@@ -53,12 +53,11 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-/*
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"shipping.php\">$error_message </a></h1></p>";
         exit();
     }
-*/
+
 	
 	//if checkbox is selected, set values of the form to the data sent from shipping.
 	$same = $_POST['same'];

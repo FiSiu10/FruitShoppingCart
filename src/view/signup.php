@@ -24,10 +24,6 @@
     .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
     .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
     /*END Form Wizard*/
-    .button{
-        margin-left: 150px;
-        position: relative;
-    }
 </style>
 
 <div class="container">

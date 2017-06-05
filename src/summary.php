@@ -94,7 +94,6 @@
 
     // Check if there is an error. Print it and then stop
     // the Script.
-
     if (!empty($error_message)) {
         echo "<br><br><p><h1 style='margin-left:50px; text-align: center'><a href=\"billing.php\">$error_message </a></h1></p>";
         exit();
@@ -233,7 +232,7 @@
              <input type="hidden" name="billPostal" value="<?php print $billPostal; ?>"/>
              <input type="hidden" name="billCountry" value="<?php print $billCountry; ?>"/>
 
-             <h4>If the info on this page is correct please submit your order:</h4>
+             <h4>Add Payment Information</h4>
              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                      data-key="<?php echo $stripe['publishable_key']; ?>"
                      data-description="Payment Checkout"
