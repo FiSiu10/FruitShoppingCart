@@ -39,6 +39,8 @@ if (!empty($password)){
     updatePassword(password_hash($password, PASSWORD_DEFAULT), $cust_id);
 }
 
+$_SESSION['custname'] = $firstname . ' ' . $lastname;
+
 ?>
 <div class="container">
     <div class="jumbotron text-center">
