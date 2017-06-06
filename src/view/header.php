@@ -60,7 +60,7 @@
 <body>
 <div class="jumbotron">
     <div class="container text-center">
-        <a href="index.php"><h1><img src = "/view/images/1.png" width="350" height="193"></h1></a>
+        <a href="/index.php"><h1><img src = "/view/images/1.png" width="350" height="193"></h1></a>
     </div>
 </div>
 <nav class="navbar navbar-inverse">
