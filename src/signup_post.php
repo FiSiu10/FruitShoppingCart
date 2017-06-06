@@ -37,7 +37,8 @@
         storeNewUsers($firstname, $lastname, $email, password_hash($password, PASSWORD_DEFAULT));
     } else {
         $error_message = 'Email address already registered.';
-        echo "<script>alert('" . $error_message . "');history.back();</script>";
+        //echo "<script>alert('" . $error_message . "');history.back();</script>";
+        echo "<script>alert('" . $error_message . "');location.href='/view/login.php';</script>";
         exit();
     }
 ?>
