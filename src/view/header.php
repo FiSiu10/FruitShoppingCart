@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+    session_start();
+    $curPage = basename($_SERVER['PHP_SELF'])
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,11 +74,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/index.php">Home</a></li>
-                <li><a href="/view/aboutus.php">About Us</a></li>
-                <li><a href="/view/faq.php">FAQ</a></li>
+                <li <?php if($curPage == 'index.php') { ?> class="active" <?php } ?>><a href="/index.php">Home</a></li>
+                <li <?php if($curPage == 'aboutus.php') { ?> class="active" <?php } ?>><a href="/view/aboutus.php">About Us</a></li>
+                <li <?php if($curPage == 'faq.php') { ?> class="active" <?php } ?>><a href="/view/faq.php">FAQ</a></li>
 <?php if(!isset($_SESSION['custid']) || !isset($_SESSION['custname'])) {?>
-                <li><a href="/view/login.php">Login/Register</a></li>
+                <li <?php if($curPage == 'login.php' || $curPage == 'signup.php') { ?> class="active" <?php } ?>><a href="/view/login.php">Login/Register</a></li>
 <?php } else { ?>
                 <li><a href="/view/logout.php">Logout</a></li>
 <?php } ?>
