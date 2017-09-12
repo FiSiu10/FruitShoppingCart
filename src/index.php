@@ -1,3 +1,5 @@
+/* index.php */
+
 <?php
 require_once 'view/header.php';
 require_once 'model/db_connect.php';
