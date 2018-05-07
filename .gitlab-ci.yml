@@ -26,7 +26,7 @@ image: gitlab.camosun.bc.ca:2020/ics199/ics199-testing-image:latest
 
 variables:
   # hostname of the DOKKU deployment server
-  DEPLOY_SRV: ics199.site
+  DEPLOY_SRV: deploy.cs.camosun.bc.ca
 
 before_script:
   # Install ssh-agent if not already installed, it is required by Docker.
